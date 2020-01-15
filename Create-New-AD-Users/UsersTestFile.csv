@@ -1,0 +1,4 @@
+﻿Name,DisplayName,GivenName,SurName,SamAccountName,UserPrincipalName,EmailAddress,Path,AccountPassword
+Alicia Lopez Perez,Alicia Lopez Perez,Alicia,Lopez Perez,alopez,alopez,alicia.lopez@email.com,"OU=Users,OU=Dpt_Logistics,DC=domain,DC=loc",O5HkTJlKj
+Laura Lester García,Laura Lester García,Laura ,Lester García,llester,llester,laura.lester@email.com,"OU=Users,OU=Dpt_Finance,DC=domain,DC=loc",iDFf6inuU
+Eloy Ferrer Moler,Eloy Ferrer Moler,Eloy,Ferrer Moler,eferrer,eferrer,eloy.ferrer@email.com,"OU=Users,OU=Dpt_Product,DC=domain,DC=loc",mrxGHizqu
