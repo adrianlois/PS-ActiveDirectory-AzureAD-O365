@@ -1,0 +1,4 @@
+﻿Name,Path,Description
+PC001,"OU=Computers,OU=Dpt_Logistics,DC=domain,DC=loc",Computer Logistic Description
+PC002,"OU=Computers,OU=Dpt_Finance,DC=domain,DC=loc",Computer Finance Description
+PC003,"OU=Computers,OU=Dpt_Product,DC=domain,DC=loc",Computer Product Description
