@@ -40,6 +40,6 @@ ForEach ($User in $MailboxDelegate) {
         -Confirm:$false
 }
 
-# Replace existing delegates: <DelegateIdentity> or "<DelegateIdentity1>","<DelegateIdentity2>",...
+# Replace existing delegates: <UPN_user1> or "<UPN_user1>","<UPN_user2>",...
 # Add or remove delegates without affecting other delegates: @{Add="\<value1\>","\<value2\>"...; Remove="\<value1\>","\<value2\>"...}
 # Remove all delegates: Use the value $null.
