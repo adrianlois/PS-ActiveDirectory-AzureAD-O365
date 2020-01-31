@@ -1,4 +1,4 @@
-﻿# Install and import module ExchangeOnlineManagement
+# Install and import module ExchangeOnlineManagement
 Install-Module -Name ExchangeOnlineManagement
 Import-Module -Name ExchangeOnlineManagement
 
@@ -14,8 +14,8 @@ Connect-EXPOPSSession
 # New-ExoPSSession
 
 # Variables
-$MailboxIdentity = "Name"
-$MailboxDelegate = 'user1','user2','user3','user4'
+$MailboxIdentity = "<Name_Mailbox>"
+$MailboxDelegate = '<UPN_user1>','<UPN_user2>','<UPN_user3>','<UPN_user4>'
 
 ForEach ($User in $MailboxDelegate) {
 
