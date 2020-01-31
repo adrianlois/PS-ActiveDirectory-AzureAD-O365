@@ -14,8 +14,8 @@ Connect-EXPOPSSession
 # New-ExoPSSession
 
 # Variables
-$MailboxIdentity = "<Name_Mailbox>"
-$MailboxDelegate = '<UPN_user1>','<UPN_user2>','<UPN_user3>','<UPN_user4>'
+$MailboxSharedIdentity = "<MailboxShared_Account"
+$MailboxUPNDelegate = '<UPN_user1>','<UPN_user2>','<UPN_user3>','<UPN_user4>'
 
 ForEach ($User in $MailboxDelegate) {
 
