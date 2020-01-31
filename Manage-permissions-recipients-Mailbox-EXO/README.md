@@ -12,7 +12,7 @@ Info: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/ma
 
 - ***$MailboxIdentity = MailboxShared_Account:*** Shared mailbox account to delegate
 
-- ***$MailboxDelegate = UPN_user1,UPN_user2,...:*** UPN of the users that will delegate (separated by commas , and single quote ' )
+- ***$MailboxDelegate = UPN_user1,UPN_user2,...:*** UPN of the users that will delegate (separated by commas (,) and single quote (') )
 
 #### About the permits
 
