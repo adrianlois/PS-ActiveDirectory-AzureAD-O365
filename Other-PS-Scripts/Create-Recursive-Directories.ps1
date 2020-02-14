@@ -9,6 +9,7 @@ $PathCheck = Test-Path -Path $Path
     If ($PathCheck -eq $True) {
         Write-Host "[++] The directory exists: $Path"
     } Else { 
+    # Create directory
 	New-Item -ItemType Directory -Path "$Path"
         Write-Host "`n[+] The directory was created successfully: $Path"
     }
