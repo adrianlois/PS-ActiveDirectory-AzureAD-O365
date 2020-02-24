@@ -12,7 +12,7 @@ $ImportFileCSV = $FileBrowser.ShowDialog()
 
 # InputBox Text Prompt: Enter AD MemberOf groups
 [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
-$ADGroup = [Microsoft.VisualBasic.Interaction]::InputBox("Introduce el nombres de los grupos AD necesarios. `n`nPuedes introducir varios grupos separados por 'punto y coma' ;", "Grupos AD (MemberOf)", "")
+$ADGroup = [Microsoft.VisualBasic.Interaction]::InputBox("Enter the names of the necessary AD groups. `n`nYou can enter several groups separated by 'semicolon' ;", "AD Groups (MemberOf)", "")
 
 # Create dump file users
 $FileADUserExist = "%userprofile%\Desktop\ADUsers_exists.txt"
@@ -52,6 +52,6 @@ Import-Csv $ImportFileCSV | foreach-object {
                 Add-ADGroupMember -Identity "$ADGroup" -Members "$SamAccountName"
         } else {
             # File with the dump of existing users
-                "`n[+] El siguiente usuario ya existe en AD: " + $SamAccountName +" - "+ $EmailAddress +" - "+ $SamAccountExist | Out-File $FileADUserExist -Append
+                "`n[+] The user already exists in AD: " + $SamAccountName +" - "+ $EmailAddress +" - "+ $SamAccountExist | Out-File $FileADUserExist -Append
           }
         }
