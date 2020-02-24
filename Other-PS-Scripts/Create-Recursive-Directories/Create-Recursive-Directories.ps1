@@ -1,6 +1,6 @@
-$FileImportCSV = "import-file.csv"
+$ImportFileCSV = "import-file.csv"
 
-Import-Csv $FileImportCSV | Foreach-Object {
+Import-Csv $ImportFileCSV | Foreach-Object {
 
 $Path = $_."Path"
 $PathCheck = Test-Path -Path $Path
