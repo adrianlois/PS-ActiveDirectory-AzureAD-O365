@@ -12,19 +12,19 @@ $Group = $_."Group"
 $Path = $_."Path"
 $Description = $_."Description"
 
-	# Check if group already exists
-	$SamAccountExist = Get-ADGroup -Filter 'SamAccountName -Like $SamAccountName'
+   # Check if group already exists
+   $SamAccountExist = Get-ADGroup -Filter 'SamAccountName -Like $SamAccountName'
 
-	If ( -not $SamAccountExist ) {
-		New-ADGroup `
-			-Name "$Group" `
-			-SamAccountName "$Group" `
-			-GroupCategory Security `
-			-GroupScope Global `
-			-DisplayName "$Group" `
-			-Path "$Path" `
-			-Description "$Description"
-	} Else {
-		Write-Host "`n[+] El grupo ya existe en AD: $Group"
-	}
+      If ( -not $SamAccountExist ) {
+         New-ADGroup `
+            -Name "$Group" `
+            -SamAccountName "$Group" `
+            -GroupCategory Security `
+            -GroupScope Global `
+            -DisplayName "$Group" `
+            -Path "$Path" `
+            -Description "$Description"
+      } Else {
+         Write-Host "`n[+] El grupo ya existe en AD: $Group"
+      }
 }
