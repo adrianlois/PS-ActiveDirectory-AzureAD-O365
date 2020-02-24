@@ -8,7 +8,7 @@ $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
     InitialDirectory = [Environment]::GetFolderPath('Desktop') 
     Filter = 'Documents (*.csv)|*.csv'
 }
-$FileImportCSV = $FileBrowser.ShowDialog()
+$ImportFileCSV = $FileBrowser.ShowDialog()
 
 # InputBox Text Prompt: Enter AD MemberOf groups
 [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
@@ -18,7 +18,7 @@ $ADGroup = [Microsoft.VisualBasic.Interaction]::InputBox("Introduce el nombres d
 $FileADUserExist = "%userprofile%\Desktop\ADUsers_exists.txt"
 
 # Import file and start loop
-Import-Csv $FileImportCSV | foreach-object {
+Import-Csv $ImportFileCSV | foreach-object {
 
 # Set variables
     $Name = $_."Name"
