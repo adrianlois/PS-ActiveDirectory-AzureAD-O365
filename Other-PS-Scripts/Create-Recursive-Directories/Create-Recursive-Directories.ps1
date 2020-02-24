@@ -1,4 +1,4 @@
-$FileImportCSV = "sample-import-file.csv"
+$FileImportCSV = "import-file.csv"
 
 Import-Csv $FileImportCSV | Foreach-Object {
 
