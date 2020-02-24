@@ -25,6 +25,6 @@ $Description = $_."Description"
             -Path "$Path" `
             -Description "$Description"
       } Else {
-         Write-Host "`n[+] El grupo ya existe en AD: $Group"
+         Write-Host "`n[+] The group already exists in AD: $Group"
       }
 }
