@@ -7,8 +7,11 @@ Active Directory, Azure AD, O365, Exchange Online. Management with PowerShell sc
 #### Manage-permissions-recipients-Mailbox-EXO
 - Manage permissions for recipients in Exchange Online. Add multiple users to a shared mailbox.
 
-#### Create-New-AD-Users	Create
+#### Create-AD-Users
 - Create new users in Active Directory with PowerShell script from csv file to import.
+
+#### Create-AD-Groups
+- Create new groups in Active Directory with PowerShell script from csv file to import.
 
 #### Get-Inactive-AD-Computers
 - Get computers objects inactive in Active Directory with PowerShell script and export to a csv file.
