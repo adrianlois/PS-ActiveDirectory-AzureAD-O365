@@ -52,6 +52,6 @@ Import-Csv $ImportFileCSV | foreach-object {
                 Add-ADGroupMember -Identity "$ADGroup" -Members "$SamAccountName"
         } else {
             # File with the dump of existing users
-                "El siguiente usuario ya existe en AD: " + $SamAccountName +" - "+ $EmailAddress +" - "+ $SamAccountExist | Out-File $FileADUserExist -Append
+                "`n[+] El siguiente usuario ya existe en AD: " + $SamAccountName +" - "+ $EmailAddress +" - "+ $SamAccountExist | Out-File $FileADUserExist -Append
           }
         }
