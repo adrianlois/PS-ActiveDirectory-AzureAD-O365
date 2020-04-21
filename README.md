@@ -1,5 +1,5 @@
-# ActiveDirectory-AzureAD-O365-EXO-Management-PowerShell-Scripts
-Active Directory, Azure AD, O365, Exchange Online. Management with PowerShell scripts.
+# PowerShell-Scripts-ActiveDirectory-AzureAD-O365-EXO
+Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange Online.
 
 #### Assign-licenses-to-user-accounts-Office-365
 - Get or Assign licenses to user accounts with Office 365 PowerShell script from csv file to import.
