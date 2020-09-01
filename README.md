@@ -25,5 +25,5 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### Create-Recursive-Directories
 - Create batch directories from a csv file recursively in local or shared directories.
 
-#### Get-ADUsersLastLogon
+#### Get-AD-Users-Last-Logon
 - Get the last logon Active Directory users by traversing querying all available Domain Controllers.
