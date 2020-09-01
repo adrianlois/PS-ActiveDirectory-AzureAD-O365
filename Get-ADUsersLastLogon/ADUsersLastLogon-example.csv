@@ -1,0 +1,5 @@
+Name;Username;Enabled;DateTime;DistinguishedName
+krbtgt;krbtgt;False;01/01/1601 01:00:00;CN=krbtgt,OU=Users,DC=domain,DC=local
+Guest;Guest;False;01/01/1601 01:00:00;CN=Guest,CN=Users,DC=domain,DC=local
+Administrador;Administrator;True;09/01/2020 10:14:42;CN=Administrator,CN=Users,DC=domain,DC=local
+Service Desk;servicedesk;True;01/01/1601 01:00:00;CN=Service Desk,OU=Users,OU=Support,DC=domain,DC=local
