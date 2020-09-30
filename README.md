@@ -27,6 +27,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### Get-AD-Users-Last-Logon
 - Get the last logon Active Directory users by traversing querying all available Domain Controllers.
+(Example files of password encryption, to avoid parameterize a password in plain text in a powershell script).
 
 #### Change-Attributes-UserAD
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
