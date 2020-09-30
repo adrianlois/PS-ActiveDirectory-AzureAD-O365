@@ -4,5 +4,5 @@
 List of attributes available to replace or add in script hashtable @{...;...}.
 
 ```
-Get-ADUser -Identity samAccountName -Properties *
+Get-ADUser -Identity $samAccountName -Properties *
 ```
