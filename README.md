@@ -34,3 +34,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### LocalUsers-Accounts
 - Sample functions for managing Windows local user accounts.
+
+#### Migrate-UserProfile
+- Migrate/Copy the most relevant directories from a local or domain user profile to a new computer using ROBOCOPY tool.
