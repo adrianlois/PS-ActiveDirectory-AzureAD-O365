@@ -1,8 +1,8 @@
-function Copy-UserProfile {
+function Migrate-UserProfile {
 
 <#
     .EXAMPLE
-    C:\PS> Copy-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
+    C:\PS> Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
 #>
 
     param (
