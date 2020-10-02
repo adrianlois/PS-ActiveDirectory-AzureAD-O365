@@ -46,7 +46,6 @@ function Migrate-UserProfile {
 		else {
             Write-Host "[-] The $path directory doesn't exist for the user $User in $PCSrc " -ForegroundColor White -BackgroundColor DarkRed
         }
-
     }
     
     Start-Process $log
