@@ -36,9 +36,8 @@ function Migrate-UserProfile {
 
         $srcPath = $src+$path
         $dstPath = $dst+$path
-        $pathExist = Test-Path -Path $srcPath
 
-        if ( $pathExist -eq $True ) {
+        if ( (Test-Path -Path $srcPath) -eq $True ) {
 
             Write-Host "[+] Copying ... $path of $User from $PCSrc -> $PCDst " -ForegroundColor White -BackgroundColor DarkGreen
             ROBOCOPY "$srcPath" "$dstPath" /MIR /Z /W:5 /LOG+:$log
