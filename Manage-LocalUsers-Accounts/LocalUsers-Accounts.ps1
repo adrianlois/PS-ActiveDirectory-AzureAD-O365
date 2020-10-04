@@ -16,23 +16,12 @@ function New-AdmUser {
     $passwd = Set-NewUserPasswordEncrypt
     $adminGroup = (Get-LocalGroup -Name "Administra*s").Name | Select-Object -First 1
     $admUser = "admuser"
-    $admUserCheck = Get-LocalUser | Where-Object {$_.Name -eq "$userStladmin"} | Select-Object Name
+    $admUserCheck = Get-LocalUser | Where-Object {$_.Name -eq "$admUser"} | Select-Object Name
     $admUserPass = ConvertTo-SecureString -String "$passwd" -AsPlainText -Force
 
     if ( -not $admUserCheck ) {
-        New-LocalUser $admUser -PasswordNeverExpires -Password $admUserPass
+        New-LocalUser -Name $admUser -PasswordNeverExpires:$True -Password $admUserPass
         Add-LocalGroupMember -Group $adminGroup -Member $admUser
-    }
-}
-
-function Set-AdmUserPasswd {
-
-    $passwd = Set-NewUserPasswordEncrypt
-    $admUser = Get-LocalUser -Name "admuser" | Select-Object Name
-    $admUserPass = ConvertTo-SecureString -String "$passwd" -AsPlainText -Force
-
-    if ( $admUser ) {
-        Set-LocalUser -Name $admUser -PasswordNeverExpires:$True -Password $admUserPass
     }
 }
 
@@ -68,7 +57,6 @@ function Disable-AdminDefaultAccount {
 
 #Set-NewUserPasswordEncrypt
 #New-AdmUser
-#Set-AdmUserPasswd
 #Remove-AdmUserAdminGroup
 #Remove-AdmUser
 #Disable-AdminDefaultAccount
