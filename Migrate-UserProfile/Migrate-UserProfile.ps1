@@ -42,7 +42,7 @@ function Migrate-UserProfile {
             Write-Host "[+] Copying ... $path of $User from $PCSrc -> $PCDst " -ForegroundColor White -BackgroundColor DarkGreen
             ROBOCOPY "$srcPath" "$dstPath" /MIR /Z /W:5 /LOG+:$log
         } 
-		else {
+	else {
             Write-Host "[-] The $path directory doesn't exist for the user $User in $PCSrc " -ForegroundColor White -BackgroundColor DarkRed
         }
     }
