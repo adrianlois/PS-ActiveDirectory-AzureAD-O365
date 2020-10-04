@@ -98,6 +98,8 @@ function Migrate-UserProfile-Form {
     $ButtonMigrateUserProfile.Location = New-Object System.Drawing.point(25,205)
     $ButtonMigrateUserProfile.Size = New-Object System.Drawing.Size(200,35)
     $ButtonMigrateUserProfile.Font = $font
+    $ButtonMigrateUserProfile.ForeColor = "White"
+	$ButtonMigrateUserProfile.BackColor = "Black"
     $ButtonMigrateUserProfile.Add_Click({MigrateUserProfile $form.Close()})
     $form.Controls.Add($ButtonMigrateUserProfile)
 
