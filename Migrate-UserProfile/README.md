@@ -3,7 +3,11 @@
 
 - Migrate/Copy the most relevant directories from a local or domain user profile to a new computer using ROBOCOPY tool.
 
-Usage example:
+Load function *Migrate-UserProfile.ps1*. Usage example:
 ```
 Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
 ```
+
+Load functions *.\Migrate-UserProfile-Form.ps1* and execute function:
+
+![migrate-userprofile-form](https://raw.githubusercontent.com/adrianlois/PowerShell-ActiveDirectory-AzureAD-O365-EXO/master/Migrate-UserProfile/Migrate-UserProfile-Form.png)
