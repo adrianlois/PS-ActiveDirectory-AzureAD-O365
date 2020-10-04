@@ -47,47 +47,47 @@ function Migrate-UserProfile-Form {
     [void][System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
     $font = New-Object System.Drawing.Font("Arial",11,[System.Drawing.FontStyle]::Bold)
     $form = New-Object System.Windows.Forms.Form
-    $form.Size = New-Object System.Drawing.Size(265,305)
+    $form.Size = New-Object System.Drawing.Size(290,305)
     $form.Text = "Migrate User Profile"
 
     # Labels and buttons
     $LabelPathPCSrc = New-Object System.Windows.Forms.Label
-    $LabelPathPCSrc.Location = New-Object System.Drawing.Size(25,20) 
+    $LabelPathPCSrc.Location = New-Object System.Drawing.Size(37,20) 
     $LabelPathPCSrc.Size = New-Object System.Drawing.Size(200,20)
     $LabelPathPCSrc.Font = $font
     $LabelPathPCSrc.Text = "Hostname PC Source:"
     $form.Controls.Add($LabelPathPCSrc)
     
     $BoxPathPCSrc = New-Object System.Windows.Forms.Textbox
-    $BoxPathPCSrc.Location = New-Object System.Drawing.point(25,40)
+    $BoxPathPCSrc.Location = New-Object System.Drawing.point(37,40)
     $BoxPathPCSrc.Size = New-Object System.Drawing.Size(200,20)
     $BoxPathPCSrc.Font = $font
     $BoxPathPCSrc.Text = ""
     $form.Controls.Add($BoxPathPCSrc)
 
     $LabelPathPCDst = New-Object System.Windows.Forms.Label
-    $LabelPathPCDst.Location = New-Object System.Drawing.Size(25,80) 
+    $LabelPathPCDst.Location = New-Object System.Drawing.Size(37,80) 
     $LabelPathPCDst.Size = New-Object System.Drawing.Size(200,20)
     $LabelPathPCDst.Font = $font
     $LabelPathPCDst.Text = "Hostname PC Destination:"
     $form.Controls.Add($LabelPathPCDst)
     
     $BoxPathPCDst = New-Object System.Windows.Forms.Textbox
-    $BoxPathPCDst.Location = New-Object System.Drawing.point(25,100)
+    $BoxPathPCDst.Location = New-Object System.Drawing.point(37,100)
     $BoxPathPCDst.Size = New-Object System.Drawing.Size(200,20)
     $BoxPathPCDst.Font = $font
     $BoxPathPCDst.Text = ""
     $form.Controls.Add($BoxPathPCDst)
 
     $LabelUser = New-Object System.Windows.Forms.Label
-    $LabelUser.Location = New-Object System.Drawing.Size(25,140) 
+    $LabelUser.Location = New-Object System.Drawing.Size(37,140) 
     $LabelUser.Size = New-Object System.Drawing.Size(200,20)
     $LabelUser.Font = $font
     $LabelUser.Text = "Username Profile:"
     $form.Controls.Add($LabelUser)
     
     $BoxUser = New-Object System.Windows.Forms.Textbox
-    $BoxUser.Location = New-Object System.Drawing.point(25,160)
+    $BoxUser.Location = New-Object System.Drawing.point(37,160)
     $BoxUser.Size = New-Object System.Drawing.Size(200,20)
     $BoxUser.Font = $font
     $BoxUser.Text = ""
@@ -95,7 +95,7 @@ function Migrate-UserProfile-Form {
 
     $ButtonMigrateUserProfile = New-Object System.Windows.Forms.Button
     $ButtonMigrateUserProfile.Text = "Migrate User Profile"
-    $ButtonMigrateUserProfile.Location = New-Object System.Drawing.point(25,205)
+    $ButtonMigrateUserProfile.Location = New-Object System.Drawing.point(37,205)
     $ButtonMigrateUserProfile.Size = New-Object System.Drawing.Size(200,35)
     $ButtonMigrateUserProfile.Font = $font
     $ButtonMigrateUserProfile.ForeColor = "White"
