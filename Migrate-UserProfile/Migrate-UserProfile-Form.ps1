@@ -31,7 +31,7 @@ function MigrateUserProfile {
             ROBOCOPY "$srcPath" "$dstPath" /MIR /Z /W:5 /LOG+:$log
         } 
 	else {
-            Write-Host "[-] The $path directory doesn't exist for the user $User in $PCSrc " -ForegroundColor White -BackgroundColor DarkRed
+            Write-Host "[!] The $path directory doesn't exist for the user $User in $PCSrc " -ForegroundColor White -BackgroundColor DarkRed
         }
     }
     
