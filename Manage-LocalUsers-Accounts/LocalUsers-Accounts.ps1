@@ -22,6 +22,31 @@ function New-AdmUser {
     if ( -not $admUserCheck ) {
         New-LocalUser -Name $admUser -PasswordNeverExpires:$True -Password $admUserPass
         Add-LocalGroupMember -Group $adminGroup -Member $admUser
+        Remove-LocalGroupMember -Group $adminGroup -Member $admUser
+
+        $sid = (Get-LocalUser -Name "user").sid.value
+        $pathReg = "HKLM:\SOFTWARE\LogMeIn\V5\Permissions\$sid"
+        
+        if ( (Test-Path -Path $pathReg) -eq $False ) {
+        
+            New-Item -Path "HKLM:\SOFTWARE\LogMeIn\V5\Permissions"
+            New-ItemProperty -Path "HKLM:\SOFTWARE\LogMeIn\V5\Permissions" -Name AllowAdmin -PropertyType DWORD -Value "1" -Force
+            
+            New-Item -Path $pathReg
+            New-ItemProperty -Path $pathReg -Name AccessMask -PropertyType QWORD -Value "343604723713" -Force
+            New-ItemProperty -Path $pathReg -Name FilterProfile -PropertyType String -Value "" -Force
+            New-ItemProperty -Path $pathReg -Name ForceUI -PropertyType DWORD -Value "0" -Force
+            New-ItemProperty -Path $pathReg -Name SSHStreamShell -PropertyType DWORD -Value "0" -Force
+        }
+        <#
+        -PropertyType
+        String (REG_SZ)
+        Binary (REG_BINARY)
+        Dword (REG_DWORD)
+        Qword (REG_QWORD)
+        MultiString (REG_MULTI_SZ)
+        ExpandString (REG_EXPAND_SZ)
+        #>
     }
 }
 
