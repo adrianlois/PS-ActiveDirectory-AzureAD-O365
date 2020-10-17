@@ -28,7 +28,6 @@ function New-AdmUser {
         $pathReg = "HKLM:\SOFTWARE\LogMeIn\V5\Permissions\$sid"
         
         if ( (Test-Path -Path $pathReg) -eq $False ) {
-        
             New-Item -Path "HKLM:\SOFTWARE\LogMeIn\V5\Permissions"
             New-ItemProperty -Path "HKLM:\SOFTWARE\LogMeIn\V5\Permissions" -Name AllowAdmin -PropertyType DWORD -Value "1" -Force
             
