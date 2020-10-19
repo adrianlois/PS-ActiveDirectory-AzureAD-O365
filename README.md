@@ -39,4 +39,4 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - Migrate/Copy the most relevant directories from a local or domain user profile to a new computer using ROBOCOPY tool.
 
 #### Encode-Password-Batchfile
-- Encode Password in batch file. A possible way to encode passwords in a batch file and not display in plain text passwords.
+- Encode Password in batch file (.bat). A possible way to encode passwords in a batch file and not display in plain text passwords.
