@@ -1,6 +1,15 @@
 function Migrate-UserProfile {
 
 <#
+    .PARAMETER PCSrc
+    Indicate the source PC from where the data will be copied.
+
+    .PARAMETER PCDst
+    Indicate the Destination PC where the data will be sent.
+
+    .PARAMETER User
+    Indicate the profile folder of the user account to copy.
+
     .EXAMPLE
     C:\PS> Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
 #>
@@ -26,10 +35,12 @@ function Migrate-UserProfile {
         "Downloads",
         "Pictures",
         "Favorites",
-        "AppData\Local\MicrosoftEdge",
+        "Videos",
+        "Documents",
         "AppData\Local\Microsoft\Internet Explorer",
-        "AppData\Local\Google\Chrome\User Data",
-        "AppData\Local\Mozilla\Firefox\Profiles"
+        "AppData\Local\MicrosoftEdge",
+        "AppData\Local\Google\Chrome",
+        "AppData\Local\Mozilla\Firefox"
     )
 
     foreach ( $path in $paths ) {
