@@ -15,7 +15,7 @@ function New-AdmUser {
 
     $passwd = Set-NewUserPasswordEncrypt
     $adminGroup = (Get-LocalGroup -Name "Administra*s").Name | Select-Object -First 1
-	$userGroup = (Get-LocalGroup -Name "Us*s").Name | Select-Object -First 1
+    $userGroup = (Get-LocalGroup -Name "Us*s").Name | Select-Object -First 1
     $admUser = "admuser"
     $admUserCheck = Get-LocalUser | Where-Object {$_.Name -eq "$admUser"} | Select-Object Name
     $admUserPass = ConvertTo-SecureString -String "$passwd" -AsPlainText -Force
