@@ -15,6 +15,7 @@ function New-AdmUser {
 
     $passwd = Set-NewUserPasswordEncrypt
     $adminGroup = (Get-LocalGroup -Name "Administra*s").Name | Select-Object -First 1
+	$userGroup = (Get-LocalGroup -Name "Us*s").Name | Select-Object -First 1
     $admUser = "admuser"
     $admUserCheck = Get-LocalUser | Where-Object {$_.Name -eq "$admUser"} | Select-Object Name
     $admUserPass = ConvertTo-SecureString -String "$passwd" -AsPlainText -Force
@@ -22,7 +23,7 @@ function New-AdmUser {
     if ( -not $admUserCheck ) {
         New-LocalUser -Name $admUser -PasswordNeverExpires:$True -Password $admUserPass
         Add-LocalGroupMember -Group $adminGroup -Member $admUser
-        Remove-LocalGroupMember -Group $adminGroup -Member $admUser
+        Remove-LocalGroupMember -Group $userGroup -Member $admUser
 
         $sid = (Get-LocalUser -Name "user").sid.value
         $pathReg = "HKLM:\SOFTWARE\LogMeIn\V5\Permissions\$sid"
