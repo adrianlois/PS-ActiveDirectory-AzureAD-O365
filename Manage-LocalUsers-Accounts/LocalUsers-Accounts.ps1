@@ -1,3 +1,13 @@
+function CheckPrivilegeUser {
+
+    # Check for administrative rights
+    if ( (-NOT([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) -or 
+         (-NOT([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrador")) ) {
+        Write-Warning -Message "The script requires elevation"
+        break
+    }
+}
+
 function Set-NewUserPasswordEncrypt {
 
     $path = "C:\Passwords" #Set you path
@@ -80,6 +90,7 @@ function Disable-AdminDefaultAccount {
     }
 }
 
+#CheckPrivilegeUser
 #Set-NewUserPasswordEncrypt
 #New-AdmUser
 #Remove-AdmUserAdminGroup
