@@ -1,4 +1,4 @@
-#### Get-DNS-Records-Duplicate-IPs
+### Get-DNS-Records-Duplicate-IPs
 
 - Get hostname (DNS Records) of active computers in Active Directory and associated duplicate IPs
 
