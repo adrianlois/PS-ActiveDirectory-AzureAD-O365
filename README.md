@@ -32,7 +32,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### Change-Attributes-UserAD
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
 
-#### LocalUsers-Accounts
+#### Manage-LocalUsers-Accounts
 - Sample functions for managing Windows local user accounts.
 
 #### Migrate-UserProfile
