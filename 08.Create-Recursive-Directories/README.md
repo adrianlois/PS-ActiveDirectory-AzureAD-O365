@@ -1,3 +1,3 @@
-#### Create-Recursive-Directories
+### Create-Recursive-Directories
 
-Create batch directories from a csv file recursively in local or shared directories.
+- Create batch directories from a csv file recursively in local or shared directories.
