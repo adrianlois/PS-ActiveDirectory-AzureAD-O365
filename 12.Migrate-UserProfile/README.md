@@ -10,4 +10,4 @@ Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
 
 Load functions *.\Migrate-UserProfile-Form.ps1* and execute function:
 
-![migrate-userprofile-form](https://raw.githubusercontent.com/adrianlois/PowerShell-ActiveDirectory-AzureAD-O365-EXO/master/Migrate-UserProfile/Migrate-UserProfile-Form.png)
+![migrate-userprofile-form](https://raw.githubusercontent.com/adrianlois/PowerShell-ActiveDirectory-AzureAD-O365-EXO/master/12.Migrate-UserProfile/Migrate-UserProfile-Form.png)
