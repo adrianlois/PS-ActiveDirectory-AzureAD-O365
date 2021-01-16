@@ -2,7 +2,7 @@ function CheckPrivilegeUser {
 
     # Check for administrative rights
     if ( -NOT([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator") ) {
-        Write-Warning -Message "The script requires elevation"
+        Write-Warning -Message "The script requires privilege elevation"
         break
     }
 }
