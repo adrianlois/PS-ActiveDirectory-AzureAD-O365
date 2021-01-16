@@ -27,13 +27,13 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 09.Get-AD-Users-Last-Logon
 - Get the last logon Active Directory users by traversing querying all available Domain Controllers.
-(Example files of password encryption, to avoid parameterize a password in plain text in a PowerShell script).
 
 #### 10.Change-Attributes-UserAD
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
 
 #### 11.Manage-LocalUsers-Accounts
-- Sample functions for managing Windows local user accounts.
+- Sample functions for managing Windows local user accounts. 
+(Example files of password encryption, to avoid parameterize a password in plain text in a PowerShell script).
 
 #### 12.Migrate-UserProfile
 - Migrate/Copy the most relevant directories from a local or domain user profile to a new computer using ROBOCOPY tool.
