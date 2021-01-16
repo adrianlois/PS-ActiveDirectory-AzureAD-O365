@@ -1,9 +1,13 @@
-function CheckPrivilegeUser {
+function CheckPrivileges {
 
     # Check for administrative rights
+	Write-Host "Checking privileges..." -ForegroundColor Red -BackgroundColor Yellow 
     if ( -NOT([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator") ) {
-        Write-Warning -Message "The script requires privilege elevation"
-        break
+        Write-Warning -Message "The script requires privilege elevation, execute as Admin mode"
+		break
+    } 
+    else { 
+        Write-Host "This script runs in Admin mode"  -ForegroundColor White -BackgroundColor DarkGreen 
     }
 }
 
@@ -89,7 +93,7 @@ function Disable-AdminDefaultAccount {
     }
 }
 
-#CheckPrivilegeUser
+#CheckPrivileges
 #Set-NewUserPasswordEncrypt
 #New-AdmUser
 #Remove-AdmUserAdminGroup
