@@ -36,4 +36,4 @@ function Get-InheritedGroups {
 }
 
 # member:1.2.840.113556.1.4.1941 -> Get inherited memebership groups
-# Get-ADGroup -LDAPFilter "(member:1.2.840.113556.1.4.1941:=CN=User IT Operations,OU=Test,OU=Usuarios,OU=Dpt_TIC,DC=stl,DC=loc)" | Select-Object DistinguishedName,Name | Format-Table -AutoSize
+# Get-ADGroup -LDAPFilter "(member:1.2.840.113556.1.4.1941:=CN=User IT,OU=Test,OU=Users,OU=DC=domain,DC=local)" | Select-Object DistinguishedName,Name | Format-Table -AutoSize
