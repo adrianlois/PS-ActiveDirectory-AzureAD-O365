@@ -39,3 +39,13 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 13.Encode-Password-Batchfile
 - Encode Password in batch file (.bat). A possible way to encode passwords in a batch file and not display in plain text passwords.
+
+#### 14.Get-ADGroups-Inherited
+- Get up to 3 levels of nested inheritances in Active Directory groups.
+
+#### 15.Get-Services-RemoteHost
+- Get report of all local services and users of remote server computers.
+
+#### 16.Manage-AD-ResourcesShared
+- Management of common shared resources, assignment of resource permissions to AD users. Makes use of the *NTFSSecurity* module.
+
