@@ -13,8 +13,8 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 04.Create-AD-Groups
 - Create new groups in Active Directory with PowerShell script from csv file to import.
 
-#### 05.Get-Inactive-AD-Computers
-- Get computers objects inactive in Active Directory with PowerShell script and export to a csv file.
+#### 05.Get-Inactive-AD-CompUsers
+- Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
 
 #### 06.Get-Move-AD-Computers
 - Get or move computers objects in Active Directory with PowerShell script from csv file to import.
