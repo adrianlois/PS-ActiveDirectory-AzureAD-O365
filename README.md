@@ -28,7 +28,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 09.Get-AD-Users-Last-Logon
 - Get the last logon Active Directory users by traversing querying all available Domain Controllers.
 
-#### 10.Change-Attributes-UserAD
+#### 10.Change-Attributes-AD-User
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
 
 #### 11.Manage-LocalUsers-Accounts
@@ -40,7 +40,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 13.Encode-Password-Batchfile
 - Encode Password in batch file (.bat). A possible way to encode passwords in a batch file and not display in plain text passwords.
 
-#### 14.Get-ADGroups-Inherited
+#### 14.Get-AD-Groups-Inherited
 - Get up to 3 levels of nested inheritances in Active Directory groups.
 
 #### 15.Get-Services-RemoteHost
