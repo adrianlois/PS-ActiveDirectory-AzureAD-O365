@@ -25,7 +25,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 08.Create-Recursive-Directories
 - Create batch directories from a csv file recursively in local or shared directories.
 
-#### 09.Get-AD-Users-Last-Logon
+#### 09.Get-AD-Users-LastLogon
 - Get the last logon specific Active Directory users (load .csv) by traversing querying all available Domain Controllers.
 
 #### 10.Change-Attributes-AD-User
@@ -48,4 +48,3 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 16.Manage-AD-ResourcesShared
 - Management of common shared resources, assignment of resource permissions to AD users. Makes use of the *NTFSSecurity* module.
-
