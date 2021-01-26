@@ -16,7 +16,7 @@ Inactive computers last 60 days
 Get-InactiveADUsers -DaysInactive 60 -ExportPah "C:\path\report-users.csv"
 ```
 
-### Explanation of timestamps attributes
+### Definition of timestamps attributes
 
 - **LastLogon**: When a user logs in, this attribute is updated only in the DC that has provided the authentication, it is not replicated. This attribute is useful to know in which services the user has or has not logged in.
 
