@@ -27,8 +27,7 @@ function Get-InactiveADUsers {
         [string]$ExportPath
     )
 
-    Search-ADAccount -AccountInactive -TimeSpan $DaysInactive | `
-    Sort -Property LastLogonDate | `
+    Search-ADAccount -AccountInactive -TimeSpan $DaysInactive | Sort -Property LastLogonDate | `
     Format-Table SamAccountName, LastLogonDate -AutoSize | `
     Export-Csv $ExportPath
 
