@@ -1,5 +1,4 @@
 function Rename-Computer {
-
     param (
     	[Parameter(Mandatory=$true)]
 	[string]$name
