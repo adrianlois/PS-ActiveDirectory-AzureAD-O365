@@ -1,7 +1,7 @@
 function Rename-Computer {
     param (
     	[Parameter(Mandatory=$true)]
-	[string]$name
+	[string]$ComputerName
     )
 
     process {
@@ -30,7 +30,7 @@ function Rename-Computer {
 function Join-ComputerToDomain {
     param ( 
 	[Parameter(Mandatory=$true)]
-	[string]$domain 
+	[string]$Domain 
      )
 
     process {
@@ -44,8 +44,5 @@ function Join-ComputerToDomain {
     }
 }
 
-$domain = 'domain.local'
-$name = 'computerName'
-
-Rename-Computer $name
-Join-ComputerToDomain $domain
+Rename-Computer
+Join-ComputerToDomain
