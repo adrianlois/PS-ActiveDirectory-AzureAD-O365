@@ -45,6 +45,7 @@ function Join-ComputerToDomain {
 }
 
 $domain = 'domain.local'
+$name = 'computerName'
 
 Rename-Computer $name
 Join-ComputerToDomain $domain
