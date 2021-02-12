@@ -48,3 +48,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 16.Manage-AD-ResourcesShared
 - Management of common shared resources, assignment of resource permissions to AD users. Makes use of the *NTFSSecurity* module.
+
+#### 17.Join-ComputerToDomain
+- Set computer name and join computer to AD domain.
