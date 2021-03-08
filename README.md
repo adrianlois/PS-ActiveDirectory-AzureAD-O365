@@ -58,5 +58,5 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 19.ReverseSID-ADUser
 - Get AD SamAccountName given your SID.
 
-#### 20.Move-ItemExtension-RecursivePath.
+#### 20.Move-ItemExtension-RecursivePath
 - Recursively move files of a given extension from subdirectories to a target root directory.
