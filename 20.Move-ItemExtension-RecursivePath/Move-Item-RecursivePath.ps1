@@ -9,7 +9,6 @@
     .EXAMPLE
     C:\PS> Move-Item-RecursivePath -SrcPathFiles "D:\Reports\Files" -ExtFiles "csv" -DestinationFiles "C:\CSVs"
 #>
-
     param (
         [parameter(Mandatory = $true)]
         [String]
