@@ -1,5 +1,5 @@
 # ExportAll-ObjectsAD
-#### Export all Active Directory objects in csv format.
+#### Export all Active Directory objects in csv format (computers, groups and users).
 
 Set with a switch parameter whether or not to export Computers, Groups or Users object types. The export path is mandatory
 
