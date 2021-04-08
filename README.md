@@ -28,7 +28,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 09.Get-AD-Users-LastLogon
 - Get the last logon specific Active Directory users (load .csv) by traversing querying all available Domain Controllers.
 
-#### 10.Change-Attributes-AD-User
+#### 10.Change-Attributes-ADUser
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
 
 #### 11.Manage-LocalUsers-Accounts

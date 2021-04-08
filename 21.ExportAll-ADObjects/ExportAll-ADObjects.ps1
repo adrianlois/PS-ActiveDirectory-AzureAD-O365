@@ -1,5 +1,8 @@
 # .\ExportAll-ADObjects.ps1 -ADComputers -ADGroups -ADUsers -ExportPath "C:\Users\adrian\Desktop\ExportAD"
 
+# Load Active Directory module
+Import-Module ActiveDirectory
+
 param (
     [switch]$ADComputers=$False,
     [switch]$ADGroups=$False,

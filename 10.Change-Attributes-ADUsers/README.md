@@ -1,4 +1,4 @@
-# Change-Attributes-UserAD
+# Change-Attributes-ADUsers
 #### Modify Active Directory User Account Attributes, loading a list of users from a CSV file
 
 The script contains examples with string and boolean values.

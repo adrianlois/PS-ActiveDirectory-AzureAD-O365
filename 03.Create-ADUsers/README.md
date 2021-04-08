@@ -1,4 +1,4 @@
-# Create-New-AD-Users
+# Create-New-ADUsers
 #### Create new users in Active Directory with PowerShell Script
 
 Screenshot of the sample csv file to import. Convert the encoding of the file to UTF-8 format, for example Notepad ++ can be used to do so.
