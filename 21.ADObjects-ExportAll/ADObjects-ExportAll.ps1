@@ -23,7 +23,7 @@ $Csv = @"
 
 Function CheckFilesCsvTemp {
 	$fileCsvTemp = "$CsvPath\*.csv"
-	if (Test-Path $fileCsvTemp -PathType leaf)	{
+	if (Test-Path $fileCsvTemp -PathType leaf) {
 		Remove-Item -Path $fileCsvTemp -Force
 	}
 }
