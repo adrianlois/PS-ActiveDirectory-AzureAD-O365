@@ -61,5 +61,5 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 20.Move-ItemExtension-RecursivePath
 - Recursively move files of a given extension from subdirectories to a target root directory.
 
-#### 21.ExportAll-ADObjects
-- Export all Active Directory objects in csv format (computers, groups and users).
+#### 21.ADObjects-ExportAll
+- Get all objects from all available Active Directory domains and export them in a CSV format (computers, groups and users).
