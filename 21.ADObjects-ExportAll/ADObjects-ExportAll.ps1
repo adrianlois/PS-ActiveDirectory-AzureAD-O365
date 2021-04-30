@@ -40,12 +40,11 @@ Function ADComputers {
 		$Name = $_."Name"
 
 		$FileCsvComputers = "$CsvPath\ADComputers_$Name.csv"
-		Write-Host ":: Export data AD Computers ..." -ForegroundColor White -BackgroundColor DarkGreen
+		Write-Host ":: Export objects data AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 		$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
 			Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
-			OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
-		
+			OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID		
 		$ADComputers | Export-Csv $FileCsvComputers -NoTypeInformation -Encoding UTF8
 
 		Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
@@ -62,14 +61,13 @@ Function ADGroups {
 		$Name = $_."Name"
 
 		$FileCsvGroups = "$CsvPath\ADGroups_$Name.csv"
-		Write-Host ":: Export data AD Groups ..." -ForegroundColor White -BackgroundColor DarkGreen
+		Write-Host ":: Export objects data AD Groups - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 		$ADGroups = Get-ADGroup -Filter * -Server $DC -SearchBase $Domain -Properties *
 		$ADGroups | Select-Object Name,Description,info,DistinguishedName,whenCreated,whenChanged,`
 			@{Name='Member';Expression={($_.Member | % {(Get-ADObject $_).Name}) -join ";"}},`
 			@{Name='MemberOf';Expression={($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 			GroupCategory,GroupScope,ObjectClass,ObjectGUID,SID | `
-		
 		Export-Csv $FileCsvGroups -NoTypeInformation -Encoding UTF8
 
 		Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
@@ -86,7 +84,7 @@ Function ADUsers {
 		$Name = $_."Name"
 
 		$FileCsvUsers = "$CsvPath\ADUsers_$Name.csv"
-		Write-Host ":: Export data AD Users ..." -ForegroundColor White -BackgroundColor DarkGreen
+		Write-Host ":: Export objects data AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 		$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
 		$ADUsers | Select-Object Name,SamAccountName,EmailAddress,DistinguishedName,Company,Enabled,Country,co,Manager,`
@@ -95,7 +93,6 @@ Function ADUsers {
 			@{Name="pwdLastSet";Expression={[DateTime]::FromFileTime($_.pwdLastSet)}},`
 			@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 			ObjectClass,ObjectGUID,SID | `
-
 		Export-Csv $FileCsvUsers -NoTypeInformation -Encoding UTF8
 
 		Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
