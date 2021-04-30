@@ -13,6 +13,7 @@ param (
 	[switch]$ADAll=$False
 )
 
+# Replace domains. Add or remove row values for multiple domains 
 $Csv = @"
 "DC";"Domain";"Name"
 "DC01DOM1.domain.local";"DC=domain,DC=local";"Domain"
@@ -114,7 +115,7 @@ if ($ADAll) {
 	CheckFilesCsvTemp ; ADComputers ; ADGroups ; ADUsers
 } 
 else {
-	if ($ADComputers) {CheckFilesCsvTemp ; ADComputers}
-	if ($ADGroups) {CheckFilesCsvTemp; ADGroups}
-	if ($ADUsers) {CheckFilesCsvTemp ; ADUsers}
+	if ($ADComputers) { CheckFilesCsvTemp ; ADComputers }
+	if ($ADGroups) { CheckFilesCsvTemp ; ADGroups }
+	if ($ADUsers) { CheckFilesCsvTemp ; ADUsers }
 }
