@@ -97,7 +97,7 @@ Function ADUsers {
 			@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 			ObjectClass,ObjectGUID,SID | `
 
-			Export-Csv $FileCsvUsers -NoTypeInformation -Encoding UTF8
+		Export-Csv $FileCsvUsers -NoTypeInformation -Encoding UTF8
 
 		Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
 		Remove-Item -Path $FileCsvUsers -Force
