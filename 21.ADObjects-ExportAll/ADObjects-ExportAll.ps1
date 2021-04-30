@@ -98,7 +98,7 @@ Function ADUsers {
 		Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
 		Remove-Item -Path $FileCsvUsers -Force
 		OutputBanner
-}
+	}
 }
 
 if ($ADAll) { 
