@@ -11,14 +11,11 @@
 #>
     param (
         [parameter(Mandatory = $true)]
-        [String]
-        $SrcPathFiles,
+        [String]$SrcPathFiles,
         [parameter(Mandatory = $true)]
-        [String]
-        $ExtFiles,
+        [String]$ExtFiles,
         [parameter(Mandatory = $true)]
-        [String]
-        $DestinationFiles
+        [String]$DestinationFiles
     )
 
     $Files = (Get-ChildItem -Path $SrcPathFiles -Recurse | Where-Object {$_.Extension -eq ".$ExtFiles"}).Fullname
