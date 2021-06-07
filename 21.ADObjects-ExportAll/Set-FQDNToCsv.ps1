@@ -1,5 +1,5 @@
 <#
-    If we already have a file exported in csv format and we want to add a new field we can use this script.
+    Use this script as an example to add a new column to an existing csv file.
 #>
 #Import-Module ActiveDirectory
 
