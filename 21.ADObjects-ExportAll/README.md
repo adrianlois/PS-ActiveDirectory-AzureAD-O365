@@ -35,3 +35,15 @@ References explained:
 
 - https://social.technet.microsoft.com/wiki/contents/articles/32418.active-directory-troubleshooting-server-has-returned-the-following-error-invalid-enumeration-context.aspx
 - Paging Search Results: https://docs.microsoft.com/es-es/previous-versions/windows/desktop/ldap/paging-search-results?redirectedfrom=MSDN
+
+
+## Set-FQDNToCsv
+
+If we already have a file exported in csv format and we want to add a new field we can use this script.
+
+
+## Get-ADComputersSetFQDN
+
+Export all Active Directory equipment type objects.
+
+For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName to create it completely (FQDN) and then create a new csv file the DNSHostName field for all computers objects.
