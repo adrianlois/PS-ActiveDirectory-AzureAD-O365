@@ -25,7 +25,7 @@ Function Get-AddFQDN-ADComputers {
 	# Create the initial csv file.
 	Set-Content -Path $CsvTemp -Value '"DistinguishedName","DNSHostName","Enabled","IPv4Address","LastLogonDate","Location","Name","ObjectClass","ObjectGUID","OperatingSystem","OperatingSystemVersion","SamAccountName","SID","UserPrincipalName","whenCreated"'
 
-# In the case of multiple domains or subdomains we can add them here.
+# Replace domains. Add or remove row values for multiple domains.
     $csv = @"
 "dc";"domain"
 "DC1.subdomain1.domain.local";"DC=subdomain1,DC=domain,DC=local"
