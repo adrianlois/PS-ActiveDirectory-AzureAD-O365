@@ -1,4 +1,4 @@
-# ADObjects-ExportAll
+# Get-ADObjects-ExportAll
 #### Get all objects from all available Active Directory domains and export them in a CSV format (computers, groups and users).
 
 Set with a switch parameter whether or not to export Computers, Groups or Users object types. The export paths are mandatory.
