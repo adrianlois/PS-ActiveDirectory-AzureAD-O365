@@ -5,7 +5,7 @@
 #>
 # Import-Module ActiveDirectory
 
-Function Get-ADComputersDomains {
+Function Get-SetFQDN-ADComputers {
 
     param (
         [Parameter(Mandatory=$True)]
