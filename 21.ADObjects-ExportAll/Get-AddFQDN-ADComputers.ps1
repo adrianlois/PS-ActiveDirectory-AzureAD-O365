@@ -56,7 +56,7 @@ Function Get-AddFQDN-ADComputers {
         $SID = $_."SID"
         $whenCreated = $_."whenCreated"
 		
-		# Calculate the DNSHostName attribute if is empty
+	# Calculate the DNSHostName attribute if is empty. Select the substring ignoring "DC=" and convert the entire string to lower case ToLower.
         $dn = $DistinguishedName.Split(",")
         $Domain = [System.String]::Concat($dn[-3].Substring(3), ".", $dn[-2].Substring(3), ".", $dn[-1].Substring(3))
         $FQDN = ($Name + "." + $Domain).ToLower()
