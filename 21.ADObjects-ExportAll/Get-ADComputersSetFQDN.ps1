@@ -1,7 +1,7 @@
 <#
-	Export all Active Directory equipment type objects.
-	For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName 
-	to create it completely (FQDN) and then create a new csv file the DNSHostName field for all computers objects.
+    Export all Active Directory equipment type objects.
+    For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName 
+    to create it completely (FQDN) and then create a new csv file the DNSHostName field for all computers objects.
 #>
 # Import-Module ActiveDirectory
 
