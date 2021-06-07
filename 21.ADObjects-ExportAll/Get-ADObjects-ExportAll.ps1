@@ -1,7 +1,7 @@
 <#
     .EXAMPLE
-    C:\PS> .\ADObjects-ExportAll.ps1 -ADAll -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
-    C:\PS> .\ADObjects-ExportAll.ps1 -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
+    C:\PS> .\Get-ADObjects-ExportAll.ps1 -ADAll -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
+    C:\PS> .\Get-ADObjects-ExportAll.ps1 -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 #>
 # Import-Module ActiveDirectory
 
