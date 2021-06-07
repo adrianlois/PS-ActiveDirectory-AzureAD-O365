@@ -82,4 +82,4 @@ Function Get-ADComputersDomains {
 	Remove-Item -Path "$CsvADComputers" -Force
 }
 
-Get-ADComputersSetFQDN -CsvLocalPath "C:\AD\export" -CsvDestinationPath "\\shared\export"
+Get-SetFQDN-ADComputers -CsvLocalPath "C:\AD\export" -CsvDestinationPath "\\shared\export"
