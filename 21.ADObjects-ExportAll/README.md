@@ -42,7 +42,7 @@ References explained:
 If we already have a file exported in csv format and we want to add a new field we can use this script.
 
 
-## Get-ADComputers-SetFQDN.ps1
+## Get-ADComputersSetFQDN.ps1
 
 Export all Active Directory equipment type objects.
 
