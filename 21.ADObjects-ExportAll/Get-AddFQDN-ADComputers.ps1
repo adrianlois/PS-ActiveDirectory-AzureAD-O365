@@ -5,7 +5,7 @@
 #>
 # Import-Module ActiveDirectory
 
-Function Get-SetFQDN-ADComputers {
+Function Get-AddFQDN-ADComputers {
 
     param (
         [Parameter(Mandatory=$True)]
@@ -82,4 +82,4 @@ Function Get-SetFQDN-ADComputers {
 	Remove-Item -Path "$CsvADComputers" -Force
 }
 
-Get-SetFQDN-ADComputers -CsvLocalPath "C:\AD\export" -CsvDestinationPath "\\shared\export"
+Get-AddFQDN-ADComputers -CsvLocalPath "C:\AD\export" -CsvDestinationPath "\\shared\export"
