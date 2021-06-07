@@ -37,12 +37,12 @@ References explained:
 - Paging Search Results: https://docs.microsoft.com/es-es/previous-versions/windows/desktop/ldap/paging-search-results?redirectedfrom=MSDN
 
 
-## Set-FQDNToCsv
+## Set-FQDNToCsv.ps1
 
 If we already have a file exported in csv format and we want to add a new field we can use this script.
 
 
-## Get-ADComputersSetFQDN
+## Get-ADComputersSetFQDN.ps1
 
 Export all Active Directory equipment type objects.
 
