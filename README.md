@@ -63,4 +63,4 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 21.ADObjects-ExportAll
 - Get all objects from all available Active Directory domains and export them in a CSV format (computers, groups and users).
-- *Get-AddFQDN-ADComputers.ps1, Set-FQDNToCsv.ps1*: Concatenate fields to establish a FQDN for computers objects (non-Windows) and export it in a CSV file.
+- *Get-AddFQDN-ADComputers.ps1, Set-FQDNToCsv.ps1*: Concatenate fields Name, Domain and DistinguishedName to establish a FQDN (DNSHostName) for computers objects (non-Windows) and export it in a CSV file.
