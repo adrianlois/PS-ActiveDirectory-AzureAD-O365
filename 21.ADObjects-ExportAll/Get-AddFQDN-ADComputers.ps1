@@ -1,5 +1,6 @@
 <#
-    Export all Active Directory equipment type objects.
+    Export all Active Directory equipment type objects. 
+    Use this script as an example to replace a column and its values in all objects, finally export everything to a single csv file.
     For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName 
     to create it completely (FQDN) and then create a new csv file and replace the DNSHostName attribute with the concatenated FQDN field for all computers objects.
 #>
