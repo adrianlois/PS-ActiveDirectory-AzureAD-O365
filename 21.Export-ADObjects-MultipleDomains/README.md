@@ -7,11 +7,11 @@ Set with a switch parameter whether or not to export Computers, Groups or Users 
 It is necessary to adapt the variable $csv to real values to perform the queries to the Active Directory domains. dc,domain,name *("DC01DOM1.domain.local";"DC=domain,DC=local";"Domain")*
 
 Example 1: Export Active Directory objects users and groups 
-```
+```powershell
 .\Export-ADObjects.ps1 -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 ```
 Example 2: Export Active Directory all objects (computers, groups and users)
-```
+```powershell
 .\Export-ADObjects.ps1 -ADAll -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 ```
 
