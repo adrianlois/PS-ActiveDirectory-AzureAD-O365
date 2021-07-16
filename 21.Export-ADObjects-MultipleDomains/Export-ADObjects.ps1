@@ -43,7 +43,7 @@ Function ADComputers {
 		$Name = $_."Name"
 
 		$FileCsvComputers = "$CsvPath\ADComputers_$Name.csv"
-		Write-Host ":: Export objects data AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
+		Write-Host ":: Export objects type AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 		$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
 			Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
@@ -64,7 +64,7 @@ Function ADGroups {
 		$Name = $_."Name"
 
 		$FileCsvGroups = "$CsvPath\ADGroups_$Name.csv"
-		Write-Host ":: Export objects data AD Groups - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
+		Write-Host ":: Export objects type AD Groups - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 		$ADGroups = Get-ADGroup -Filter * -Server $DC -SearchBase $Domain -Properties *
 		$ADGroups | Select-Object Name,Description,info,DistinguishedName,whenCreated,whenChanged,`
@@ -87,7 +87,7 @@ Function ADUsers {
 		$Name = $_."Name"
 
 		$FileCsvUsers = "$CsvPath\ADUsers_$Name.csv"
-		Write-Host ":: Export objects data AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
+		Write-Host ":: Export objects type AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 		$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
 		$ADUsers | Select-Object Name,SamAccountName,EmailAddress,DistinguishedName,Company,Enabled,Country,co,Manager,`
