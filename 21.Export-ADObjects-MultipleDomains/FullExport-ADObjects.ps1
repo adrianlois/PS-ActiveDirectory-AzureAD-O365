@@ -64,9 +64,9 @@ $Csv = @"
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvComputers -Force
-                		Write-Host "[OK] Moved export file: `n$FileCsvComputers --> $DestinationPath\ADComputers_$Name.csv" -ForegroundColor White -BackgroundColor DarkGray
+                		Write-Host "[OK] Moved export file: `n$FileCsvComputers --> $DestinationPath\ADComputers_$Name.csv" -ForegroundColor Yellow
 			} else {
-                		Write-Host "[OK] Path export file: `n$FileCsvComputers" -ForegroundColor White -BackgroundColor DarkGray
+                		Write-Host "[OK] Path export file: `n$FileCsvComputers" -ForegroundColor Yellow
 			}
 			OutputBanner
 		}
@@ -92,9 +92,9 @@ $Csv = @"
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvGroups -Force
-                		Write-Host "[OK] Moved export file: `n$FileCsvGroups --> $DestinationPath\ADGroups_$Name.csv" -ForegroundColor White -BackgroundColor DarkGray
+                		Write-Host "[OK] Moved export file: `n$FileCsvGroups --> $DestinationPath\ADGroups_$Name.csv" -ForegroundColor Yellow
 			} else {
-                		Write-Host "[OK] Path export file: `n$FileCsvGroups" -ForegroundColor White -BackgroundColor DarkGray
+                		Write-Host "[OK] Path export file: `n$FileCsvGroups" -ForegroundColor Yellow
             		}
 			OutputBanner
 		}
@@ -122,9 +122,9 @@ $Csv = @"
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvUsers -Force
-                		Write-Host "[OK] Moved export file: `n$FileCsvUsers --> $DestinationPath\ADUsers_$Name.csv" -ForegroundColor White -BackgroundColor DarkGray
+                		Write-Host "[OK] Moved export file: `n$FileCsvUsers --> $DestinationPath\ADUsers_$Name.csv" -ForegroundColor Yellow
 			} else {
-                		Write-Host "[OK] Path export file: `n$FileCsvUsers" -ForegroundColor White -BackgroundColor DarkGray
+                		Write-Host "[OK] Path export file: `n$FileCsvUsers" -ForegroundColor Yellow
             		}                  
 			OutputBanner
 		}
