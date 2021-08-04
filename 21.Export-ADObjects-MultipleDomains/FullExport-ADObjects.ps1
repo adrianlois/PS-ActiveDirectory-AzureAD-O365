@@ -1,12 +1,12 @@
 <#
     .EXAMPLE
-	Full export
+	Full export.
 		C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD"
 	
 	DestinationPath: Perform a full export by writing the files locally, once exported move these .csv files to a share.
 		C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
     
-	ADComputers, ADGroups, ADUsers: Boolean parameters, specify what you want to export. ADFull (implies all parameters)
+	ADComputers, ADGroups, ADUsers: Boolean parameters, specify what you want to export. ADFull (implies all parameters).
 		C:\PS> FullExport-ADObjects -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 #>
 
