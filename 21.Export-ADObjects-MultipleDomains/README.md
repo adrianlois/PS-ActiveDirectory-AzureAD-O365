@@ -28,7 +28,7 @@ Summarizing, this is due to a maximum time exceeded between the request of new p
 
 > *MaxEnumContextExpiration* default parameter in *C:\Windows\ADWS\Microsoft.ActiveDirectory.WebServices.exe.config*, change the default value of this paremeter is strongly discouraged).
 
-#### Recommended solution
+### Recommended solution
 
 Store your Active Directory objects in a variable in memory, and then send them down the pipe using the variable. This will decrease the times considerably by avoiding the excess 30 minutes of querying.
 
