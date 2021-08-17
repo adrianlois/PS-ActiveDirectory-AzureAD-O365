@@ -1,13 +1,13 @@
 <#
-    .EXAMPLE
-	Full export.
-		C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD"
-	
-	DestinationPath: Perform a full export by writing the files locally, once exported move these .csv files to a share.
-		C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
-    
-	ADComputers, ADGroups, ADUsers: Boolean parameters, specify what you want to export. ADFull (implies all parameters).
-		C:\PS> FullExport-ADObjects -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
+.EXAMPLE
+Full export.
+   C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD"
+
+DestinationPath: Perform a full export by writing the files locally, once exported move these .csv files to a share.
+   C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
+
+ADComputers, ADGroups, ADUsers: Boolean parameters, specify what you want to export. ADFull (implies all parameters).
+   C:\PS> FullExport-ADObjects -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 #>
 
 # Import-Module ActiveDirectory
@@ -65,7 +65,8 @@ $Csv = @"
 				Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvComputers -Force
                 		Write-Host "[OK] Moved export file: `n$FileCsvComputers --> $DestinationPath\ADComputers_$Name.csv" -ForegroundColor Yellow
-			} else {
+			}
+			else {
                 		Write-Host "[OK] Path export file: `n$FileCsvComputers" -ForegroundColor Yellow
 			}
 			OutputBanner
@@ -93,7 +94,8 @@ $Csv = @"
 				Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvGroups -Force
                 		Write-Host "[OK] Moved export file: `n$FileCsvGroups --> $DestinationPath\ADGroups_$Name.csv" -ForegroundColor Yellow
-			} else {
+			}
+			else {
                 		Write-Host "[OK] Path export file: `n$FileCsvGroups" -ForegroundColor Yellow
             		}
 			OutputBanner
@@ -123,7 +125,8 @@ $Csv = @"
 				Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvUsers -Force
                 		Write-Host "[OK] Moved export file: `n$FileCsvUsers --> $DestinationPath\ADUsers_$Name.csv" -ForegroundColor Yellow
-			} else {
+			}
+			else {
                 		Write-Host "[OK] Path export file: `n$FileCsvUsers" -ForegroundColor Yellow
             		}                  
 			OutputBanner
