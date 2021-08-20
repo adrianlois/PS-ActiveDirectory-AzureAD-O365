@@ -27,7 +27,7 @@ Function FullExport-ADObjects {
 
 $ErrorActionPreference = "Stop"
 
-# Replace domains. Add or remove row values for multiple domains 
+# Replace domains. Add or remove row values for multiple domains. In case of a single domain set only one row and remove the rest of rows.
 $Csv = @"
 "DC";"Domain";"Name"
 "DC01DOM1.domain.local";"DC=domain,DC=local";"Domain"
