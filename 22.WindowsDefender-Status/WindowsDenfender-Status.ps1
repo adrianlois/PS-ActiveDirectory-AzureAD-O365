@@ -1,6 +1,6 @@
 $defenderOptions = Get-MpComputerStatus
 
-	if ([string]::IsNullOrEmpty($defenderOptions)) {
+	if ( [string]::IsNullOrEmpty($defenderOptions) ) {
 		Write-Host "Windows Defender not running on the server:" $env:computername -foregroundcolor "Yellow"
 	} 
 	else {
