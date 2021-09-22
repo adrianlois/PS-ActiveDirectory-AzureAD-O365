@@ -64,3 +64,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 21.Export-ADObjects-MultipleDomains
 - Get all objects from all available Active Directory domains and export them in a CSV format (computers, groups and users).
 - *Get-AddFQDN-ADComputers.ps1, Set-FQDNToCsv.ps1*: Concatenate attributes Name, Domain and DistinguishedName to establish a FQDN (DNSHostName) for computers objects (non-Windows), add a new column to an existing CSV file and then export it all in a single CSV file.
+
+#### 22.WindowsDefender-Status
+- Check the status of the Windows Defender service and components and disable it for security testing to prevent threat detection.
