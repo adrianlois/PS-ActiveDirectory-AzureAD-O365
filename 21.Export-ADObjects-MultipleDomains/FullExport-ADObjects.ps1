@@ -26,6 +26,7 @@ Function FullExport-ADObjects {
 	)
 
 $ErrorActionPreference = "Stop"
+$GetDate = Get-Date -Format "MM-dd-yyyy"
 
 # Replace domains. Add or remove row values for multiple domains. In case of a single domain set only one row and remove the rest of rows.
 $Csv = @"
@@ -53,7 +54,7 @@ $Csv = @"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$FileCsvComputers = "$CsvPath\ADComputers_$Name.csv"
+			$FileCsvComputers = "$CsvPath\ADComputers_$Name`_$GetDate.csv"
 			Write-Host ":: Export objects type AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
             
 			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
@@ -65,7 +66,7 @@ $Csv = @"
 				Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvComputers -Force
                 		Write-Host " [OK] Moved export file:" -ForegroundColor Green
-				Write-Host " $FileCsvComputers --> $DestinationPath\ADComputers_$Name.csv" -ForegroundColor Yellow
+				Write-Host " $FileCsvComputers --> $DestinationPath\ADComputers_$Name`_$GetDate.csv" -ForegroundColor Yellow
 			}
 			else {
                 		Write-Host " [OK] Path export file:" -ForegroundColor Green
@@ -82,7 +83,7 @@ $Csv = @"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$FileCsvGroups = "$CsvPath\ADGroups_$Name.csv"
+			$FileCsvGroups = "$CsvPath\ADGroups_$Name`_$GetDate.csv"
 			Write-Host ":: Export objects type AD Groups - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 			$ADGroups = Get-ADGroup -Filter * -Server $DC -SearchBase $Domain -Properties *
@@ -96,7 +97,7 @@ $Csv = @"
 				Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvGroups -Force
                 		Write-Host " [OK] Moved export file:" -ForegroundColor Green
-				Write-Host " $FileCsvGroups --> $DestinationPath\ADGroups_$Name.csv" -ForegroundColor Yellow
+				Write-Host " $FileCsvGroups --> $DestinationPath\ADGroups_$Name`_$GetDate.csv" -ForegroundColor Yellow
 			}
 			else {
                 		Write-Host " [OK] Path export file:" -ForegroundColor Green
@@ -113,7 +114,7 @@ $Csv = @"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$FileCsvUsers = "$CsvPath\ADUsers_$Name.csv"
+			$FileCsvUsers = "$CsvPath\ADUsers_$Name`_$GetDate.csv"
 			Write-Host ":: Export objects type AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 			$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
@@ -129,7 +130,7 @@ $Csv = @"
 				Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvUsers -Force
                 		Write-Host " [OK] Moved export file:" -ForegroundColor Green
-				Write-Host " $FileCsvUsers --> $DestinationPath\ADUsers_$Name.csv" -ForegroundColor Yellow
+				Write-Host " $FileCsvUsers --> $DestinationPath\ADUsers_$Name`_$GetDate.csv" -ForegroundColor Yellow
 			}
 			else {
 				Write-Host " [OK] Path export file:" -ForegroundColor Green
