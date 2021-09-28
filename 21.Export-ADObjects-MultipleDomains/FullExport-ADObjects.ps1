@@ -64,11 +64,11 @@ $Csv = @"
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvComputers -Force
-                Write-Host " [OK] Moved export file:" -ForegroundColor Green
+                		Write-Host " [OK] Moved export file:" -ForegroundColor Green
 				Write-Host " $FileCsvComputers --> $DestinationPath\ADComputers_$Name.csv" -ForegroundColor Yellow
 			}
 			else {
-                Write-Host " [OK] Path export file:" -ForegroundColor Green
+                		Write-Host " [OK] Path export file:" -ForegroundColor Green
 				Write-Host " $FileCsvComputers" -ForegroundColor Yellow
 			}
 			OutputBanner
@@ -95,13 +95,13 @@ $Csv = @"
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvGroups -Force
-                Write-Host " [OK] Moved export file:" -ForegroundColor Green
+                		Write-Host " [OK] Moved export file:" -ForegroundColor Green
 				Write-Host " $FileCsvGroups --> $DestinationPath\ADGroups_$Name.csv" -ForegroundColor Yellow
 			}
 			else {
-                Write-Host " [OK] Path export file:" -ForegroundColor Green
+                		Write-Host " [OK] Path export file:" -ForegroundColor Green
 				Write-Host " $FileCsvGroups" -ForegroundColor Yellow
-            }
+            		}
 			OutputBanner
 		}
 	}
@@ -128,13 +128,13 @@ $Csv = @"
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
 				Remove-Item -Path $FileCsvUsers -Force
-                Write-Host " [OK] Moved export file:" -ForegroundColor Green
+                		Write-Host " [OK] Moved export file:" -ForegroundColor Green
 				Write-Host " $FileCsvUsers --> $DestinationPath\ADUsers_$Name.csv" -ForegroundColor Yellow
 			}
 			else {
 				Write-Host " [OK] Path export file:" -ForegroundColor Green
 				Write-Host " $FileCsvUsers" -ForegroundColor Yellow
-            }                  
+            		}                  
 			OutputBanner
 		}
 	}
