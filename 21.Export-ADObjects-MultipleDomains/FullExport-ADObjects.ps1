@@ -43,7 +43,7 @@ $Csv = @"
 	}
 
 	Function OutputBanner {
-		Write-Host "<<<<< Finished OK! >>>>>" -ForegroundColor White -BackgroundColor DarkCyan `n
+		Write-Host "<<< Finished OK! >>>" -ForegroundColor White -BackgroundColor DarkCyan `n
 	}
 
 	Function ADComputers {
