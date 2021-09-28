@@ -26,7 +26,7 @@ Function FullExport-ADObjects {
 	)
 
 $ErrorActionPreference = "Stop"
-$GetDate = Get-Date -Format "MM-dd-yyyy"
+$GetDate = Get-Date -Format "dd-MM-yyyy"
 
 # Replace domains. Add or remove row values for multiple domains. In case of a single domain set only one row and remove the rest of rows.
 $Csv = @"
