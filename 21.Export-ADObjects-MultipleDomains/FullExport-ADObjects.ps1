@@ -114,7 +114,7 @@ $Csv = @"
 
 			$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
 			$ADUsers | Select-Object Name,SamAccountName,EmailAddress,DistinguishedName,Company,Enabled,Country,co,Manager,`
-				Department,Description,Office,OfficePhone,LastLogonDate,whenCreated,whenChanged,PasswordNeverExpires,`
+				Department,Description,Office,OfficePhone,LastLogonDate,whenCreated,whenChanged,DoesNotRequirePreAuth,PasswordNeverExpires,`
 				@{Name="ExpirationDate";Expression={[DateTime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}},`
 				@{Name="pwdLastSet";Expression={[DateTime]::FromFileTime($_.pwdLastSet)}},`
 				@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
