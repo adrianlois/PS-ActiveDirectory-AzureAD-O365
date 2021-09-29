@@ -36,7 +36,7 @@ $Csv = @"
 "DC01DOM3.central.domain.local";"DC=central,DC=domain,DC=local";"Central"
 "@ | ConvertFrom-CSV -Delimiter ';'
 
-	Function CheckFilesCsvTemp {
+	Function CheckFilesCsvOld {
 		
 		if (Test-Path -Path "$CsvPath\*" -Include *.csv) {
 			Write-Host "`nCurrent .csv files in the directory: $CsvPath`n" -ForegroundColor Green
@@ -151,11 +151,11 @@ $Csv = @"
 	}
 
 	if ($ADFull) { 
-		CheckFilesCsvTemp ; ADComputers ; ADGroups ; ADUsers 
+		CheckFilesCsvOld ; ADComputers ; ADGroups ; ADUsers 
 	} 
 	else {
-		if ($ADComputers) { CheckFilesCsvTemp ; ADComputers }
-		if ($ADGroups) { CheckFilesCsvTemp ; ADGroups }
-		if ($ADUsers) { CheckFilesCsvTemp ; ADUsers }
+		if ($ADComputers) { CheckFilesCsvOld ; ADComputers }
+		if ($ADGroups) { CheckFilesCsvOld ; ADGroups }
+		if ($ADUsers) { CheckFilesCsvOld ; ADUsers }
 	}
 }
