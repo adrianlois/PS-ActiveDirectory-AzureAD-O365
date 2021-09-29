@@ -36,17 +36,17 @@ $Csv = @"
 "DC01DOM3.central.domain.local";"DC=central,DC=domain,DC=local";"Central"
 "@ | ConvertFrom-CSV -Delimiter ';'
 
-	Function CheckFilesCsvOld {
+	Function CheckCsvFilesOld {
 		
 		if (Test-Path -Path "$CsvPath\*" -Include *.csv) {
 			Write-Host "`nCurrent .csv files in the directory: $CsvPath`n" -ForegroundColor Green
-			$GetFilesCsv = (Get-ChildItem -Path "$CsvPath\*" -Include *.csv).Name ; $GetFilesCsv
+			$GetCsvFiles = (Get-ChildItem -Path "$CsvPath\*" -Include *.csv).Name ; $GetCsvFiles
 			$(Write-Host "`nDo you want to delete previous export files?" -NoNewLine -ForegroundColor Red) + `
 			$(Write-Host " Y/N: " -NoNewLine -ForegroundColor Cyan)
 			$DeleteFilesCsv = Read-Host
 			
 			if ($DeleteFilesCsv -ieq 'y') {
-				Remove-Item -Path $GetFilesCsv -Force
+				Remove-Item -Path $GetCsvFiles -Force
 				$(Write-Host "`n[OK] Deleted .csv files in the directory: " -NoNewLine -ForegroundColor Green) + `
 				$(Write-Host "$CsvPath`n" -ForegroundColor Yellow)
 			}
@@ -64,23 +64,23 @@ $Csv = @"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$FileCsvComputers = "$CsvPath\ADComputers_$Name`_$GetDate.csv"
+			$CsvFileComputers = "$CsvPath\ADComputers_$Name`_$GetDate.csv"
 			Write-Host "`n:: Export objects type AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
             
 			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
 				Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
 				OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
-			$ADComputers | Export-Csv $FileCsvComputers -NoTypeInformation -Encoding UTF8 -Force
+			$ADComputers | Export-Csv $CsvFileComputers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
-				Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
-				Remove-Item -Path $FileCsvComputers -Force
+				Copy-Item -Path $CsvFileComputers -Destination $DestinationPath -Force
+				Remove-Item -Path $CsvFileComputers -Force
 				$(Write-Host " [OK] Moved export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $FileCsvComputers --> $DestinationPath\ADComputers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileComputers --> $DestinationPath\ADComputers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
 			}
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $FileCsvComputers" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileComputers" -ForegroundColor Yellow)
 			}
 			OutputBanner
 		}
@@ -93,7 +93,7 @@ $Csv = @"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$FileCsvGroups = "$CsvPath\ADGroups_$Name`_$GetDate.csv"
+			$CsvFileGroups = "$CsvPath\ADGroups_$Name`_$GetDate.csv"
 			Write-Host "`n:: Export objects type AD Groups - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 			$ADGroups = Get-ADGroup -Filter * -Server $DC -SearchBase $Domain -Properties *
@@ -101,17 +101,17 @@ $Csv = @"
 				@{Name='Member';Expression={($_.Member | % {(Get-ADObject $_).Name}) -join ";"}},`
 				@{Name='MemberOf';Expression={($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 				GroupCategory,GroupScope,ObjectClass,ObjectGUID,SID | `
-			Export-Csv $FileCsvGroups -NoTypeInformation -Encoding UTF8 -Force
+			Export-Csv $CsvFileGroups -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
-				Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
-				Remove-Item -Path $FileCsvGroups -Force
+				Copy-Item -Path $CsvFileGroups -Destination $DestinationPath -Force
+				Remove-Item -Path $CsvFileGroups -Force
 				$(Write-Host " [OK] Moved export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $FileCsvGroups --> $DestinationPath\ADGroups_$Name`_$GetDate.csv" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileGroups --> $DestinationPath\ADGroups_$Name`_$GetDate.csv" -ForegroundColor Yellow)
 			}
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $FileCsvGroups" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileGroups" -ForegroundColor Yellow)
 			}
 			OutputBanner
 		}
@@ -124,7 +124,7 @@ $Csv = @"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$FileCsvUsers = "$CsvPath\ADUsers_$Name`_$GetDate.csv"
+			$CsvFileUsers = "$CsvPath\ADUsers_$Name`_$GetDate.csv"
 			Write-Host "`n:: Export objects type AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
 
 			$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
@@ -134,28 +134,28 @@ $Csv = @"
 				@{Name="pwdLastSet";Expression={[DateTime]::FromFileTime($_.pwdLastSet)}},`
 				@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 				ObjectClass,ObjectGUID,SID | `
-			Export-Csv $FileCsvUsers -NoTypeInformation -Encoding UTF8 -Force
+			Export-Csv $CsvFileUsers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
-				Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
-				Remove-Item -Path $FileCsvUsers -Force
+				Copy-Item -Path $CsvFileUsers -Destination $DestinationPath -Force
+				Remove-Item -Path $CsvFileUsers -Force
 				$(Write-Host " [OK] Moved export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $FileCsvUsers --> $DestinationPath\ADUsers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileUsers --> $DestinationPath\ADUsers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
 			}
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $FileCsvUsers" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileUsers" -ForegroundColor Yellow)
 			}                  
 			OutputBanner
 		}
 	}
 
 	if ($ADFull) { 
-		CheckFilesCsvOld ; ADComputers ; ADGroups ; ADUsers 
+		CheckCsvFilesOld ; ADComputers ; ADGroups ; ADUsers 
 	} 
 	else {
-		if ($ADComputers) { CheckFilesCsvOld ; ADComputers }
-		if ($ADGroups) { CheckFilesCsvOld ; ADGroups }
-		if ($ADUsers) { CheckFilesCsvOld ; ADUsers }
+		if ($ADComputers) { CheckCsvFilesOld ; ADComputers }
+		if ($ADGroups) { CheckCsvFilesOld ; ADGroups }
+		if ($ADUsers) { CheckCsvFilesOld ; ADUsers }
 	}
 }
