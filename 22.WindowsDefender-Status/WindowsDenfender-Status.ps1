@@ -1,6 +1,6 @@
 $defenderOptions = Get-MpComputerStatus
 
-	if ( [string]::IsNullOrEmpty($defenderOptions) ) {
+	if ([string]::IsNullOrEmpty($defenderOptions)) {
 		Write-Host "Windows Defender not running on the server:" $env:computername -foregroundcolor "Yellow"
 	} 
 	else {
@@ -15,7 +15,7 @@ $defenderOptions = Get-MpComputerStatus
 
 $defenderDisable = Read-Host 'Disable Windows Defender on the server? (Y/N)' $env:computername -foregroundcolor "Cyan"
 
-	if ( $defenderDisable -ieq 'y' ) {
+	if ($defenderDisable -ieq 'y') {
 		Uninstall-WindowsFeature -Name Windows-Defender
 		Write-host "Windows Defender is disabled on the server:" $env:computername -foregroundcolor "Green"
 	} 
