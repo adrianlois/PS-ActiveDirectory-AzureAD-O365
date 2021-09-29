@@ -37,20 +37,20 @@ $Csv = @"
 "@ | ConvertFrom-CSV -Delimiter ';'
 
 	Function CheckFilesCsvTemp {
-
-        if (Test-Path -Path "$CsvPath\*" -Include *.csv) {
+		
+		if (Test-Path -Path "$CsvPath\*" -Include *.csv) {
 			Write-Host "`nCurrent .csv files in the directory: $CsvPath`n" -ForegroundColor Green
 			$GetFilesCsv = (Get-ChildItem -Path "$CsvPath\*" -Include *.csv).Name ; $GetFilesCsv
 			$(Write-Host "`nDo you want to delete previous export files?" -NoNewLine -ForegroundColor Red) + `
 			$(Write-Host " Y/N: " -NoNewLine -ForegroundColor Cyan)
 			$DeleteFilesCsv = Read-Host
-
-            if ($DeleteFilesCsv -ieq 'y') {
+			
+			if ($DeleteFilesCsv -ieq 'y') {
 				Remove-Item -Path $GetFilesCsv -Force
 				$(Write-Host "`n[OK] Deleted .csv files in the directory: " -NoNewLine -ForegroundColor Green) + `
 				$(Write-Host "$CsvPath`n" -ForegroundColor Yellow)
-            }
-        }
+			}
+		}
 	}
 
 	Function OutputBanner {
@@ -112,7 +112,7 @@ $Csv = @"
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
 				$(Write-Host " $FileCsvGroups" -ForegroundColor Yellow)
-            }
+			}
 			OutputBanner
 		}
 	}
@@ -145,7 +145,7 @@ $Csv = @"
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
 				$(Write-Host " $FileCsvUsers" -ForegroundColor Yellow)
-            }                  
+			}                  
 			OutputBanner
 		}
 	}
