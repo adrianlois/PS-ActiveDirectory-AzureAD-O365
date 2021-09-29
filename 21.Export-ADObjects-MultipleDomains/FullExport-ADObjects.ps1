@@ -70,7 +70,7 @@ $Csv = @"
 			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
 				Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
 				OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
-			$ADComputers | Export-Csv $FileCsvComputers -NoTypeInformation -Encoding UTF8
+			$ADComputers | Export-Csv $FileCsvComputers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvComputers -Destination $DestinationPath -Force
@@ -101,7 +101,7 @@ $Csv = @"
 				@{Name='Member';Expression={($_.Member | % {(Get-ADObject $_).Name}) -join ";"}},`
 				@{Name='MemberOf';Expression={($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 				GroupCategory,GroupScope,ObjectClass,ObjectGUID,SID | `
-			Export-Csv $FileCsvGroups -NoTypeInformation -Encoding UTF8
+			Export-Csv $FileCsvGroups -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvGroups -Destination $DestinationPath -Force
@@ -134,7 +134,7 @@ $Csv = @"
 				@{Name="pwdLastSet";Expression={[DateTime]::FromFileTime($_.pwdLastSet)}},`
 				@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
 				ObjectClass,ObjectGUID,SID | `
-			Export-Csv $FileCsvUsers -NoTypeInformation -Encoding UTF8
+			Export-Csv $FileCsvUsers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
 				Copy-Item -Path $FileCsvUsers -Destination $DestinationPath -Force
