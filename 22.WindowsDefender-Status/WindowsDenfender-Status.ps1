@@ -4,8 +4,7 @@ $defenderOptions = Get-MpComputerStatus
 		Write-Host "Windows Defender not running on the server:" $env:computername -foregroundcolor "Yellow"
 	} 
 	else {
-		Write-Host 'Windows Defender is active on the server:' $env:computername -foregroundcolor "Cyan"
-		Write-Host ''
+		Write-Host 'Windows Defender is active on the server:' $env:computername -foregroundcolor "Cyan" `n
 		Write-Host '	Windows Defender enabled?' $defenderOptions.AntivirusEnabled
 		Write-Host '	Windows Defender service enabled?' $defenderOptions.AMServiceEnabled
 		Write-Host '	Windows Defender Antispware enabled?' $defenderOptions.AntispywareEnabled
