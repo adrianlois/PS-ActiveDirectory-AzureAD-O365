@@ -1,8 +1,8 @@
 # Export-ADObjects-MultipleDomains
 ## FullExport-ADObjects.ps1
-#### Get all objects from all available Active Directory domains and export them in a CSV format (computers, groups and users).
+#### Get all objects from all available Active Directory domains and export them in a CSV format (users, groups and computers).
 
-Set with a switch parameter whether or not to export Computers, Groups or Users object types. The export path is mandatory, a second export path would be an optional parameter.
+Set with a switch parameter whether or not to export Users, Groups or Computers object types. The export path is mandatory, a second export path would be an optional parameter.
 
 The only thing that needs to be modified in the script are the DC domain controllers and their corresponding domains. In the case of having more than one domain controller for each domain, i recommend indicating the PDC (Primary Domain Controller). It is necessary to adapt the variable $csv to real values to perform the queries to the Active Directory domains. 
 
@@ -16,7 +16,7 @@ Example 1: Export Active Directory objects users and groups
 ```powershell
 FullExport-ADObjects -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD"
 ```
-Example 2: Export Active Directory all objects (computers, groups and users) and the files are exported locally and then moved to another path
+Example 2: Export Active Directory all objects (users, groups and computers) and the files are exported locally and then moved to another path
 ```powershell
 FullExport-ADObjects -ADAll -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 ```
