@@ -1,6 +1,6 @@
 <#
 .EXAMPLE
-Full export. Single destination, without parameter -DestinationPath
+Full export. Single destination (only the -CsvPath parameter), without parameter -DestinationPath
    C:\PS> FullExport-ADObjects -ADFull -CsvPath "C:\Users\adrian\Desktop\ExportAD"
 
 DestinationPath: Perform a full export by writing the files locally, once exported move these .csv files to a share.
