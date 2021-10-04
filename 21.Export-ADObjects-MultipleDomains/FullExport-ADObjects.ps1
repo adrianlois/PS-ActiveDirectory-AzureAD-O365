@@ -19,9 +19,9 @@ Function FullExport-ADObjects {
 		[Parameter(Mandatory=$True)]
 		[string]$CsvPath,
 		[string]$DestinationPath,
-		[switch]$ADComputers=$False,
-		[switch]$ADGroups=$False,
 		[switch]$ADUsers=$False,
+		[switch]$ADGroups=$False,
+		[switch]$ADComputers=$False,
 		[switch]$ADFull=$False
 	)
 
@@ -57,31 +57,35 @@ $Csv = @"
 		Write-Host "<<< Finished OK! >>>" -ForegroundColor White -BackgroundColor DarkCyan
 	}
 
-	Function ADComputers {
-	
+	Function ADUsers {
+
 		$Csv | ForEach-Object {
 			$DC = $_."DC"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$CsvFileComputers = "$CsvPath\ADComputers_$Name`_$GetDate.csv"
-			Write-Host "`n:: Export objects type AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
-            
-			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
-				Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
-				OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
-			$ADComputers | Export-Csv $CsvFileComputers -NoTypeInformation -Encoding UTF8 -Force
+			$CsvFileUsers = "$CsvPath\ADUsers_$Name`_$GetDate.csv"
+			Write-Host "`n:: Export objects type AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
+
+			$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
+			$ADUsers | Select-Object Name,SamAccountName,EmailAddress,DistinguishedName,Company,Enabled,Country,co,Manager,`
+				Department,Description,Office,OfficePhone,LastLogonDate,whenCreated,whenChanged,DoesNotRequirePreAuth,PasswordNeverExpires,`
+				@{Name="ExpirationDate";Expression={[DateTime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}},`
+				@{Name="pwdLastSet";Expression={[DateTime]::FromFileTime($_.pwdLastSet)}},`
+				@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
+				ObjectClass,ObjectGUID,SID | `
+			Export-Csv $CsvFileUsers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
-				Copy-Item -Path $CsvFileComputers -Destination $DestinationPath -Force
-				Remove-Item -Path $CsvFileComputers -Force
+				Copy-Item -Path $CsvFileUsers -Destination $DestinationPath -Force
+				Remove-Item -Path $CsvFileUsers -Force
 				$(Write-Host " [OK] Moved export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $CsvFileComputers --> $DestinationPath\ADComputers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileUsers --> $DestinationPath\ADUsers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
 			}
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $CsvFileComputers" -ForegroundColor Yellow)
-			}
+				$(Write-Host " $CsvFileUsers" -ForegroundColor Yellow)
+			}                  
 			OutputBanner
 		}
 	}
@@ -117,45 +121,41 @@ $Csv = @"
 		}
 	}
 
-	Function ADUsers {
-
+	Function ADComputers {
+	
 		$Csv | ForEach-Object {
 			$DC = $_."DC"
 			$Domain = $_."Domain"
 			$Name = $_."Name"
 
-			$CsvFileUsers = "$CsvPath\ADUsers_$Name`_$GetDate.csv"
-			Write-Host "`n:: Export objects type AD Users - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
-
-			$ADUsers = Get-ADUser -Filter * -Server $DC -SearchBase $Domain -Properties *
-			$ADUsers | Select-Object Name,SamAccountName,EmailAddress,DistinguishedName,Company,Enabled,Country,co,Manager,`
-				Department,Description,Office,OfficePhone,LastLogonDate,whenCreated,whenChanged,DoesNotRequirePreAuth,PasswordNeverExpires,`
-				@{Name="ExpirationDate";Expression={[DateTime]::FromFileTime($_."msDS-UserPasswordExpiryTimeComputed")}},`
-				@{Name="pwdLastSet";Expression={[DateTime]::FromFileTime($_.pwdLastSet)}},`
-				@{Name='MemberOf';Expression= {($_.MemberOf | % {(Get-ADObject $_).Name}) -join ";"}},`
-				ObjectClass,ObjectGUID,SID | `
-			Export-Csv $CsvFileUsers -NoTypeInformation -Encoding UTF8 -Force
+			$CsvFileComputers = "$CsvPath\ADComputers_$Name`_$GetDate.csv"
+			Write-Host "`n:: Export objects type AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
+            
+			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
+				Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
+				OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
+			$ADComputers | Export-Csv $CsvFileComputers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
-				Copy-Item -Path $CsvFileUsers -Destination $DestinationPath -Force
-				Remove-Item -Path $CsvFileUsers -Force
+				Copy-Item -Path $CsvFileComputers -Destination $DestinationPath -Force
+				Remove-Item -Path $CsvFileComputers -Force
 				$(Write-Host " [OK] Moved export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $CsvFileUsers --> $DestinationPath\ADUsers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
+				$(Write-Host " $CsvFileComputers --> $DestinationPath\ADComputers_$Name`_$GetDate.csv" -ForegroundColor Yellow)
 			}
 			else {
 				$(Write-Host " [OK] Path export file:" -NoNewLine -ForegroundColor Green) + `
-				$(Write-Host " $CsvFileUsers" -ForegroundColor Yellow)
-			}                  
+				$(Write-Host " $CsvFileComputers" -ForegroundColor Yellow)
+			}
 			OutputBanner
 		}
 	}
 
 	if ($ADFull) { 
-		CheckCsvFilesOld ; ADComputers ; ADGroups ; ADUsers 
+		CheckCsvFilesOld ; ADUsers ; ADGroups ; ADComputers
 	} 
 	else {
-		if ($ADComputers) { CheckCsvFilesOld ; ADComputers }
-		if ($ADGroups) { CheckCsvFilesOld ; ADGroups }
 		if ($ADUsers) { CheckCsvFilesOld ; ADUsers }
+		if ($ADGroups) { CheckCsvFilesOld ; ADGroups }
+		if ($ADComputers) { CheckCsvFilesOld ; ADComputers }
 	}
 }
