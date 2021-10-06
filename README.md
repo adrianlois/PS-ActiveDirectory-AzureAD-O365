@@ -1,4 +1,4 @@
-# PowerShell-ActiveDirectory-AzureAD-O365
+# PS-ActiveDirectory-AzureAD-O365
 Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange Online.
 
 #### 01.Assign-licenses-to-user-accounts-Office-365
