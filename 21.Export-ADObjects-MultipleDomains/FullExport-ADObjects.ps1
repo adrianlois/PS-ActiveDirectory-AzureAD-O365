@@ -37,6 +37,10 @@ $Csv = @"
 "DC01DOM3.central.domain.local";"DC=central,DC=domain,DC=local";"Central"
 "@ | ConvertFrom-CSV -Delimiter ';'
 
+	Function OutputBanner {
+		Write-Host "<<< Finished OK! >>>" -ForegroundColor White -BackgroundColor DarkCyan
+	}
+
 	Function CheckCsvFilesOld {
 		
 		if (Test-Path -Path "$CsvPath\*" -Include *.csv) {
@@ -52,10 +56,6 @@ $Csv = @"
 				$(Write-Host "$CsvPath`n" -ForegroundColor Yellow)
 			}
 		}
-	}
-
-	Function OutputBanner {
-		Write-Host "<<< Finished OK! >>>" -ForegroundColor White -BackgroundColor DarkCyan
 	}
 
 	Function ADUsers {
