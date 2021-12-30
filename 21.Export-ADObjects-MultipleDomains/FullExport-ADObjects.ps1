@@ -133,7 +133,7 @@ $Csv = @"
 			Write-Host "`n:: Export objects type AD Computers - Domain $Name" -ForegroundColor White -BackgroundColor DarkGreen
             
 			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
-				Name,DistinguishedName,Name,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
+				Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
 				OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
 			$ADComputers | Export-Csv $CsvFileComputers -NoTypeInformation -Encoding UTF8 -Force
 
