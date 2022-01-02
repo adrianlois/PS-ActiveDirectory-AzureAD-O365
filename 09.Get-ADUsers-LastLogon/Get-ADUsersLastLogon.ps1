@@ -17,7 +17,7 @@ function Get-ADUsersLastLogon()
     foreach($dc in $dcs)
     {
       $hostname = $dc.HostName
-      $currentUser = Get-ADUser $user.SamAccountName | Get-ADObject -Server $hostname -Properties lastLogon
+      $currentUser = Get-ADUser $user.SamAccountName | Get-ADObject -Server $hostname -Properties LastLogon
 
       if($currentUser.LastLogon -gt $time) 
       {
