@@ -69,4 +69,4 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - Check the status of the Windows Defender service and components and disable it for security testing to prevent threat detection.
 
 #### 23.AdminLocal-Config
-Delete the default local administrator and create a new user that is part of the local administrators group.
+- Disable the default local administrator and create a new user that is part of the local administrators group.
