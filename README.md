@@ -46,8 +46,8 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 15.Get-Services-RemoteHost
 - Get report of all local services and users of remote server computers.
 
-#### 16.Manage-ADResourcesShared
-- Management of common shared resources, assignment of resource permissions to AD users. Makes use of the *NTFSSecurity* module.
+#### 16.ADResourcesShared-Manage
+- Management of common shared resources, assignment of resource permissions to AD users. (Makes use of the *NTFSSecurity* module).
 
 #### 17.Join-ComputerToDomain
 - Set computer name and join computer to AD domain.
