@@ -45,7 +45,7 @@ function New-ADGroupShare {
     }
     #>
 
-    $UserFile = Get-Content "UserFile.txt"
+    $UserFile = Get-Content "config\UserFile.txt"
         Foreach ( $UserMember in $UserFile ) {      
             New-ADGroup `
                 -Name $NameGroupAD `
