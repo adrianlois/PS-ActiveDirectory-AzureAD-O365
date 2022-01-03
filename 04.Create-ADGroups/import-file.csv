@@ -1,5 +1,5 @@
 ﻿Group,Path,Description
-Dpt_Financial,"OU=Groups,OU=Departments,DC=domain,DC=local","Financial Department Group"
+Dpt_Finance,"OU=Groups,OU=Departments,DC=domain,DC=local","Financial Department Group"
 Dpt_eCommerce,"OU=Groups,OU=Departments,DC=domain,DC=local","Financial Department Group"
 Dpt_Purchases,"OU=Groups,OU=Departments,DC=domain,DC=local","Purchases Department Group"
 Dpt_Sales,"OU=Groups,OU=Departments,DC=domain,DC=local","Sales Department Group"
