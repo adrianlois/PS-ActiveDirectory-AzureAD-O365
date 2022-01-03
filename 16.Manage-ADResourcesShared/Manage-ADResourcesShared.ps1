@@ -10,6 +10,16 @@ $ErrorActionPreference = 'Stop'
 
 $ConfigData = Import-LocalizedData -BaseDirectory "config\" -FileName "data.psd1"
 
+<#
+$ConfigData = @{
+    PathOUPublic        = "OU=Public Groups,DC=domain,DC=local"
+    PathShare           = "\\resourceShare\IT"
+    NTFSOwner           = "domain\OwnerGroup"
+    BackupGroup         = "domain\BackupGroup"
+    PrefixNameGroup     = "grp."
+}
+#>
+
 function Install-Modules {
 
     if ( -not (((Get-Module -ListAvailable).name -eq "NTFSSecurity") -or ((Get-Module -ListAvailable).name -eq "ActiveDirectory")) ) {
