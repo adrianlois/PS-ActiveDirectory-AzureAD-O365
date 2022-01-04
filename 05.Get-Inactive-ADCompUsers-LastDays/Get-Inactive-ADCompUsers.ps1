@@ -1,11 +1,9 @@
-Import-Module ActiveDirectory
-
 function Get-InactiveADComputers {
 
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
-        [int]$DaysInactive
+        [int]$DaysInactive,
         [Parameter(Mandatory)]
         [string]$ExportPath
     )
@@ -17,12 +15,14 @@ function Get-InactiveADComputers {
     Export-Csv $ExportPath
 }
 
+# Get-InactiveADComputers -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
+
 function Get-InactiveADUsers {
 
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]
-        [int]$DaysInactive
+        [int]$DaysInactive,
         [Parameter(Mandatory)]
         [string]$ExportPath
     )
@@ -30,9 +30,6 @@ function Get-InactiveADUsers {
     Search-ADAccount -AccountInactive -TimeSpan $DaysInactive | Sort -Property LastLogonDate | `
     Format-Table SamAccountName, LastLogonDate -AutoSize | `
     Export-Csv $ExportPath
-
-    <# another way
-      $Time = (Get-Date).Adddays(-($DaysInactive))
-      Get-ADUser -Filter * -Properties * | Where-Object {$_.LastLogonDate -le $Time} | Select UserPrincipalName | Export-Csv $ExportPath
-    #>
 }
+
+# Get-InactiveADUsers -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"

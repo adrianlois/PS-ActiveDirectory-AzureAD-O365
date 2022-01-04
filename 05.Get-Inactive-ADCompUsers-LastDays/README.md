@@ -1,6 +1,8 @@
-## Get-Inactive-ADCompUsers
+## 05.Get-Inactive-ADCompUsers-LastDays
 
-- Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
+- **Get-Inactive-ADCompUsers**
+
+Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
 
 #### Functions
 *Get-InactiveADComputers*: Get inactive computers from Active Directory by set the last number days.
@@ -15,6 +17,10 @@ Inactive computers last 60 days
 ```
 Get-InactiveADUsers -DaysInactive 60 -ExportPah "C:\path\report-users.csv"
 ```
+
+- **Get-ADUsers-Inactivity-LastDays.ps1**
+
+Get the last login of Active Directory users (set the $DaysInactive variable). Search only for enabled AD users and export the output to a csv file.
 
 ### Definition of timestamps attributes
 
