@@ -6,4 +6,4 @@ Get the last logon specific users Active Directory (load .csv) by traversing que
 
 - **Get-ADUsers-Inactive-LastDays.ps1**
 
-Get the last login of Active Directory users for the last 90 days (modify the $Time variable). Only search for enabled users and export the output in a csv file.
+Get the last login of Active Directory users for the last 90 days (modify the $Time variable). Search only enabled AD users and export the output in a csv file.
