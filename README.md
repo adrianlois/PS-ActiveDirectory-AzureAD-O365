@@ -52,7 +52,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 17.Join-ComputerToDomain
 - Set computer name and join computer to AD domain.
 
-#### 18.UsersCopy-ADGroup-SourceToDestination
+#### 18.CopyUsers-ADGroup-SourceToDestination
 - Copy all users from a source group to a target group in Active Directory.
 
 #### 19.ReverseSID-ADUser
