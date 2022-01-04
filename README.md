@@ -15,7 +15,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 05.Get-Inactive-ADCompUsers-LastDays
 - *Get-Inactive-ADCompUsers.ps1*: Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
-- *Get-ADUsers-Inactivity-LastDays.ps1*: Get the last login of Active Directory users (set the $DaysInactive variable). Search only for enabled AD users and export the output to a csv file.
+- *Get-Inactivity-ADUsers-LastDays.ps1*: Get the last login of Active Directory users (set the $DaysInactive variable). Search only for enabled AD users and export the output to a csv file.
 
 #### 06.Get-Move-ADComputers
 - Get or move computers objects in Active Directory with PowerShell script from csv file to import.
