@@ -2,6 +2,7 @@ Import-Module ActiveDirectory
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
 
 function Get-ADUsersLastLogon {
+  
   $dcs = Get-ADDomainController -Filter {Name -like "*"}
   $users = Get-ADUser -Filter *
   $time = 0
