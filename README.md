@@ -1,10 +1,10 @@
 # PS-ActiveDirectory-AzureAD-O365
 Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange Online.
 
-#### 01.Assign-licenses-to-user-accounts-Office-365
+#### 01.Assign-Licenses-To-UserAccounts-O365
 - Get or Assign licenses to user accounts with Office 365 PowerShell script from csv file to import.
 
-#### 02.Manage-permissions-recipients-Mailbox-EXO
+#### 02.Manage-Permissions-RecipientsMailbox-EXO
 - Manage permissions for recipients in Exchange Online. Add multiple users to a shared mailbox.
 
 #### 03.Create-ADUsers
@@ -25,8 +25,10 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 08.Create-Recursive-Directories
 - Create batch directories from a csv file recursively in local or shared directories.
 
-#### 09.Get-ADUsers-LastLogon
-- Get the last logon specific Active Directory users (load .csv) by traversing querying all available Domain Controllers.
+#### 09.Get-ADUsers-LastLogon-And-InactiveUsers-LastDays
+- *Get-ADUsersLastLogon.ps1*: Get the last logon specific users Active Directory (load .csv) by traversing querying in all available Domain Controllers.
+
+- *Get-ADUsers-Inactive-nLastDays.ps1*: Get the last login of Active Directory users for the last 90 days (modify the $Time variable). Only search for enabled users and export the output in a csv file.
 
 #### 10.Change-Attributes-ADUsers
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
