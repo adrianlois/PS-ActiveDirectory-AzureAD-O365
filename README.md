@@ -13,8 +13,9 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 04.Create-ADGroups
 - Create new groups in Active Directory with PowerShell script from csv file to import.
 
-#### 05.Get-Inactive-ADCompUsers
-- Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
+#### 05.Get-Inactive-ADCompUsers-LastDays
+- *Get-Inactive-ADCompUsers.ps1*: Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
+- *Get-ADUsers-Inactivity-LastDays.ps1*: Get the last login of Active Directory users (set the $DaysInactive variable). Search only for enabled AD users and export the output to a csv file.
 
 #### 06.Get-Move-ADComputers
 - Get or move computers objects in Active Directory with PowerShell script from csv file to import.
@@ -25,10 +26,8 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 08.Create-Recursive-Directories
 - Create batch directories from a csv file recursively in local or shared directories.
 
-#### 09.Get-ADUsers-LastLogon-And-InactiveUsers-LastDays
-- *Get-ADUsersLastLogon.ps1*: Get the last logon specific users Active Directory (load .csv) by traversing querying in all available Domain Controllers.
-
-- *Get-ADUsers-Inactive-LastDays.ps1*: Get the last login of Active Directory users for the last 90 days (modify the $Time variable). Search only enabled AD users and export the output in a csv file.
+#### 09.Get-ADUsers-LastLogon
+- Get the last logon specific users Active Directory (load .csv) by traversing querying in all available Domain Controllers.
 
 #### 10.Change-Attributes-ADUsers
 - Modify Active Directory User Account Attributes, loading a list of users from a CSV file.
