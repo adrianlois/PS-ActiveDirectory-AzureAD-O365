@@ -13,7 +13,7 @@ Function Get-ADUsers-Inactivity-LastDays {
     Get-ADUser -Filter {LastLogonTimeStamp -lt $Time} -Properties * | `
     Where-Object {$_.Enabled -like "True"} | `
     Select-Object Name,EmailAddress,DistinguishedName,SamAccountName,PasswordNeverExpires,Enabled,whenCreated,LastLogonDate | `
-    Export-Csv -Path $ExportFilePath -Delimiter ';' -NoTypeInformation
+    Export-Csv -Path $ExportPath -Delimiter ';' -NoTypeInformation
 }
 
 # Get-ADUsers-Inactivity-LastDays -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
