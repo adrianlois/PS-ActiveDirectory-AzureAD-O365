@@ -12,7 +12,7 @@ function Get-InactiveADComputers {
 
     Get-ADComputer -Filter {LastLogonTimeStamp -lt $Time} -Properties LastLogonTimeStamp | `
     Select-Object Name,@{Name="Stamp";Expression={[DateTime]::FromFileTime($_.lastLogonTimestamp)}} | `
-    Export-Csv $ExportPath
+    Export-Csv -Path $ExportPath -Delimiter ';' -NoTypeInformation
 }
 
 # Get-InactiveADComputers -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
@@ -29,7 +29,7 @@ function Get-InactiveADUsers {
 
     Search-ADAccount -AccountInactive -TimeSpan $DaysInactive | Sort-Object -Property LastLogonDate | `
     Format-Table SamAccountName, LastLogonDate -AutoSize | `
-    Export-Csv $ExportPath
+    Export-Csv -Path $ExportPath -Delimiter ';' -NoTypeInformation
 }
 
 # Get-InactiveADUsers -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
