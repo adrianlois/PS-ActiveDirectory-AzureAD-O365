@@ -8,7 +8,7 @@ Function Get-ADUsers-Inactivity-LastDays {
         [string]$ExportPath
     )
 
-    $Time = (Get-Date).Adddays(-($Days))
+    $Time = (Get-Date).Adddays(-($DaysInactive))
     
     Get-ADUser -Filter {LastLogonTimeStamp -lt $Time} -Properties * | `
     Where-Object {$_.Enabled -like "True"} | `
