@@ -21,6 +21,9 @@ Get-InactiveADUsers -DaysInactive 60 -ExportPah "C:\path\report-users.csv"
 ### **Get-Inactivity-ADUsers-LastDays.ps1**
 
 Get the last login of Active Directory users (set the $DaysInactive variable). Search only for enabled AD users and export the output to a csv file.
+```
+Get-ADUsers-Inactivity-LastDays -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
+```
 
 ### Definition of timestamps attributes
 
