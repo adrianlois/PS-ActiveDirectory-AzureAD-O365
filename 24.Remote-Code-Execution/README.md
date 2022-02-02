@@ -6,14 +6,17 @@ There are several different ways to execute commands remotely on a Domain Contro
 ```powershell
 wmic /node:COMPUTER/user:DOMAIN\USER /password:PASSWORD process call create “COMMAND“
 ```
+
 - **PowerShell (WMI)**
 ```powershell
 Invoke-WMIMethod -Class Win32_Process -Name Create -ArgumentList $COMMAND -ComputerName $COMPUTER -Credential $CRED
 ```
+
 - **WinRM**
 ```powershell
 winrs -r:COMPUTER COMMAND
 ```
+
 - **PowerShell Remoting**
 ```powershell
 Invoke-Command -computername $COMPUTER -command { $COMMAND}
