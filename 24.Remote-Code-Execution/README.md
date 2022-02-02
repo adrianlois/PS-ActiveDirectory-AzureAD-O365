@@ -19,6 +19,6 @@ winrs -r:COMPUTER COMMAND
 
 - **PowerShell Remoting**
 ```powershell
-Invoke-Command -computername $COMPUTER -command { $COMMAND}
+Invoke-Command -computername $COMPUTER -command {$COMMAND}
 New-PSSession -Name PSCOMPUTER -ComputerName $COMPUTER; Enter-PSSession -Name PSCOMPUTER
 ```
