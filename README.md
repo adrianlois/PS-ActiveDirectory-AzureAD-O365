@@ -71,3 +71,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 23.AdminLocal-Config
 - Disable the default local administrator and create a new user that is part of the local administrators group.
+
+#### 24.Remote-Code-Execution
+- Remote Code Execution Options. Execute commands remotely on a Domain Controller using: WMI, WinRM, PowerShell (WMI), PowerShell Remoting.
