@@ -134,7 +134,7 @@ $Csv = @"
             
 			$ADComputers = Get-ADComputer -Filter * -Server $DC -SearchBase $Domain -Properties `
 				Name,DistinguishedName,DNSHostName,IPv4Address,Enabled,LastLogonDate,whenCreated,`
-				OperatingSystem,OperatingSystemVersion,Location,ObjectClass,ObjectGUID,SID
+				OperatingSystem,OperatingSystemVersion,Description,Location,ObjectClass,ObjectGUID,SID
 			$ADComputers | Export-Csv $CsvFileComputers -NoTypeInformation -Encoding UTF8 -Force
 
 			if ($DestinationPath.Length -ne 0) {
