@@ -8,11 +8,12 @@ Function Get-ADUsers-Inactivity-LastDays {
         [string]$ExportPath
     )
 
-    $Time = (Get-Date).Adddays(-($DaysInactive))
-    
-    Get-ADUser -Filter * -Properties * | `
+	$Time = (Get-Date).AddDays(-$DaysInactive)
+
+	Get-ADUser -Filter * -Properties * | `
 	Select-Object Name,EmailAddress,DistinguishedName,SamAccountName,PasswordNeverExpires,Enabled,whenCreated,LastLogonDate | `
 	Where-Object { ($_.LastLogonDate -lt $Time) -and ($_.Enabled -like "True") } | `
+	Sort-Object -Property LastLogonDate | `
     Export-Csv -Path $ExportPath -Delimiter ';' -NoTypeInformation -Encoding UTF8
 }
 
