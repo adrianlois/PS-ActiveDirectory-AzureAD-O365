@@ -1,4 +1,4 @@
-Function Get-ADUsers-Inactivity-LastDays {
+Function Get-Inactivity-ADUsersLastLogon {
 
     [CmdletBinding()]
     param (
@@ -17,4 +17,4 @@ Function Get-ADUsers-Inactivity-LastDays {
     Export-Csv -Path $ExportPath -Delimiter ';' -NoTypeInformation -Encoding UTF8
 }
 
-# Get-ADUsers-Inactivity-LastDays -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
+# Get-Inactivity-ADUsersLastLogon -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
