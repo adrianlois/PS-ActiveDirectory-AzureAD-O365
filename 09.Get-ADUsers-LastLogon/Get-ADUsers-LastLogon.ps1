@@ -3,6 +3,15 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
 
 function Get-ADUsersLastLogon {
   
+  <#
+  ## Alternative to Get-ADDomainController to get all available domain controllers
+  Write-Output "[+] Enumerating all the DCs"
+  ForEach ( $dc in [DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().DomainControllers ) {
+    Write-Output "[+] DC found: $($dc.Name)"
+    $dcs.Add($dc.Name) | Out-Null
+  }
+  #>
+
   $dcs = Get-ADDomainController -Filter {Name -like "*"}
   $users = Get-ADUser -Filter *
   $time = 0
