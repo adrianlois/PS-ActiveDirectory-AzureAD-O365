@@ -74,3 +74,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 24.Remote-Code-Execution
 - Remote Code Execution Options. Execute commands remotely on a Domain Controller using: WMI, WinRM, PowerShell (WMI), PowerShell Remoting.
+
+#### 25.Get-Properties-By-Email
+- Get a user's ownership information from the domain email. And get from an array of emails.
