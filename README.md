@@ -79,4 +79,4 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - Get a AD user properties information from the domain email. And get from an array of emails.
 
 #### 26.Get-ADUsers-LastWhenCreated
-- Get the AD users created in the last 30 days. We can filter by name with findstr.
+- Get the AD users created in the last 30 days. We can filter by name with findstr for a more specific result.
