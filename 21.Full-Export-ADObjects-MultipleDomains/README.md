@@ -1,4 +1,4 @@
-# Export-ADObjects-MultipleDomains
+# Full-Export-ADObjects-MultipleDomains
 ## FullExport-ADObjects.ps1
 #### Get all objects from all available Active Directory domains and export them in a CSV format (users, groups and computers).
 
