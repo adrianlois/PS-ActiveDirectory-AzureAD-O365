@@ -83,4 +83,4 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - Get the all AD users sorted by creation date of a specific OU.
 
 #### 27.Get-MicrosoftUpdatesInstalled
-- With this script get a list of all Microsoft Updates. Shows all Microsoft Updates, not just Windows Updates like Get-HotFix
+- With this script get a list of all Microsoft Updates. Shows all Microsoft Updates, not just Windows Updates like Get-HotFix.
