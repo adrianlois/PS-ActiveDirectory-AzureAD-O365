@@ -81,3 +81,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### 26.Get-ADUsers-LastWhenCreated
 - Get the AD users created in the last 30 days and sorted by creation date. We can filter by name with findstr for a more specific result.
 - Get the all AD users sorted by creation date of a specific OU.
+
+#### 27.Get-MicrosoftUpdatesInstalled
+- With this script get a list of all Microsoft Updates. Shows all Microsoft Updates, not just Windows Updates like Get-HotFix
