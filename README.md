@@ -84,3 +84,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### 27.Get-MicrosoftUpdatesInstalled
 - With this script get a list of all Microsoft Updates. Shows all Microsoft Updates, not just Windows Updates like Get-HotFix.
+
+#### 28.Get-IP-HostName-AD-DNS
+- *Get-IP-HostName-AD.ps1*: Do it with the Get-ADComputer cmdlet to get the IP address from the Active Directory computer object attributes. Use the ActiveDirectory module.
+- *Get-IP-HostName-DNS.ps1*: Do this with the Get-DnsServerResourceRecord cmdlet to get the IP address via the A-type record associated with the DNS hostname domain. Use the DnsServer module.
