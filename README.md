@@ -42,7 +42,7 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - Encode Password in batch file (.bat). A possible way to encode passwords in a batch file and not display in plain text passwords.
 
 #### 14.Get-ADGroups-Inherited
-- Get up to 3 levels of nested inheritances in Active Directory groups. (1.2.840.113556.1.4.1941 -> LDAP_MATCHING_RULE_IN_CHAIN: Get inherited memebership groups).
+- Get up to 3 levels of nested inheritances in Active Directory groups. (String 1.2.840.113556.1.4.1941 -> LDAP_MATCHING_RULE_IN_CHAIN: Get inherited memebership groups).
 
 #### 15.Get-Services-RemoteHost
 - Get report of all local services and users of remote server computers.
