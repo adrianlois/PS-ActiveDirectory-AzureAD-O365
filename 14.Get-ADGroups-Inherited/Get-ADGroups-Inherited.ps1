@@ -28,11 +28,9 @@ function Get-InheritedGroups {
 
                 Write-Output "----- 3 -----"
                 Write-Output "       $grpAD2 -> $grpAD3"
-
             }
         }
     }
-
 }
 
 # member:1.2.840.113556.1.4.1941 -> Get inherited memebership groups
