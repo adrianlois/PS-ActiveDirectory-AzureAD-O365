@@ -11,9 +11,11 @@ For more information, see the following from Technet:
 - http://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx
 - https://devblogs.microsoft.com/scripting/active-directory-week-explore-group-membership-with-powershell
 
-memberOf:1.2.840.113556.1.4.1941 -> Get inherited memebership groups.
+1.2.840.113556.1.4.1941 -> LDAP_MATCHING_RULE_IN_CHAIN: Get inherited memebership groups.
+- memberOf: All members of specified group, including due to group nesting.
+- member: All groups specified user belongs to, including due to group nesting.
 ```ps
-Get-ADGroup -LDAPFilter "(memberOf:1.2.840.113556.1.4.1941:=cn=UserGroup,ou=Groups,ou=CompanyUsers,dc=test,dc=corp)" | Select-Object DistinguishedName, Name | Format-Table -AutoSize
+Get-ADGroup -LDAPFilter "(memberOf:1.2.840.113556.1.4.1941:= cn=Test,ou=East,dc=Domain,dc=com)" | Select-Object DistinguishedName, Name | Format-Table -AutoSize
 ```
 
 Another similar path using the Get-ADObject cmdlet in a recursive (only shows the users and groups of the last inheritance).
