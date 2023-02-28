@@ -9,8 +9,7 @@ The string **1.2.840.113556.1.4.1941** specifies **LDAP_MATCHING_RULE_IN_CHAIN**
 
 For more information, see the following from Technet:
 - http://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx
-- http://blogs.technet.com/b/heyscriptingguy/archive/2014/11/25/active-directory-week-explore-group-membership-with-powershell.aspx
-
+- https://devblogs.microsoft.com/scripting/active-directory-week-explore-group-membership-with-powershell
 
 memberOf:1.2.840.113556.1.4.1941 -> Get inherited memebership groups.
 ```ps
