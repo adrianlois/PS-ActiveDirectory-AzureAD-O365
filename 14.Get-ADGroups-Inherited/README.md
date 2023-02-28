@@ -11,7 +11,7 @@ For more information, see the following from Technet:
 - http://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx
 - https://devblogs.microsoft.com/scripting/active-directory-week-explore-group-membership-with-powershell
 
-1.2.840.113556.1.4.1941 -> LDAP_MATCHING_RULE_IN_CHAIN: Get inherited memebership groups.
+String 1.2.840.113556.1.4.1941 -> LDAP_MATCHING_RULE_IN_CHAIN: Get inherited memebership groups.
 - **memberOf**: All members of specified group, including due to group nesting.
 - **member**: All groups specified user belongs to, including due to group nesting.
 
