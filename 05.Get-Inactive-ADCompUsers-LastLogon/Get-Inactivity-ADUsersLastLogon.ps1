@@ -2,9 +2,9 @@ Function Get-Inactivity-ADUsersLastLogon {
 
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory=$True)]
         [int]$DaysInactive,
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory=$True)]
         [string]$ExportPath
     )
 
