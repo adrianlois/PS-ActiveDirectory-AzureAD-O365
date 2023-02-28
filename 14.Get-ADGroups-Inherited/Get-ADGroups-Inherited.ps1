@@ -36,4 +36,10 @@ function Get-InheritedGroups {
 }
 
 # member:1.2.840.113556.1.4.1941 -> Get inherited memebership groups
-# Get-ADGroup -LDAPFilter "(member:1.2.840.113556.1.4.1941:=CN=User IT,OU=Test,OU=Users,OU=DC=domain,DC=local)" | Select-Object DistinguishedName,Name | Format-Table -AutoSize
+# Get-ADGroup -LDAPFilter "(memberOf:1.2.840.113556.1.4.1941:=cn=UserGroup,ou=Groups,ou=CompanyUsers,dc=test,dc=corp)" | Select-Object DistinguishedName,Name | Format-Table -AutoSize
+
+<#
+# Another similar path using the Get-ADObject cmdlet in a recursive (only shows the users and groups of the last inheritance).
+    $adgrupo = Get-ADGroup "Domain Admins"
+    Get-ADObject -Filter {memberOf -RecursiveMatch $adgrupo.DistinguishedName}
+#>
