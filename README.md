@@ -89,5 +89,5 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - *Get-IP-HostName-AD.ps1*: Do it with the Get-ADComputer cmdlet to get the IP address from the Active Directory computer object attributes. Use the ActiveDirectory module.
 - *Get-IP-HostName-DNS.ps1*: Do this with the Get-DnsServerResourceRecord cmdlet to get the IP address via the type A record associated with the DNS hostname domain. Use the DnsServer module.
 
-#### 29.Add-TemporaryUser-GroupMembership
-- *Add-TempUserGroupMembership*: This feature is called Temporary Group Membership (Time Based). This feature can be used when you need to temporarily grant a user some authority based on AD security group membership. After the specified time has elapsed, the user will be automatically removed from the security group (without administrator intervention).
+#### 29.Add-UserTemporary-GroupMembership
+- *Add-UserTempGroupMembership*: This feature is called Temporary Group Membership (Time Based). This feature can be used when you need to temporarily grant a user some authority based on AD security group membership. After the specified time has elapsed, the user will be automatically removed from the security group (without administrator intervention).
