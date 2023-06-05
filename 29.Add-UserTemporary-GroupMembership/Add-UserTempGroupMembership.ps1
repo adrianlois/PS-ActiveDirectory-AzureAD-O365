@@ -1,4 +1,4 @@
-Function Add-TempUserGroupMembership {
+Function Add-UserTempGroupMembership {
     [CmdletBinding()]
     Param (
         [String]$IdentityGroup,
@@ -14,4 +14,4 @@ Function Add-TempUserGroupMembership {
 
     Add-ADGroupMember -Identity $IdentityGroup -Members $MemberUser -MemberTimeToLive $ttl
 }
-Add-TempUserGroupMembership -IdentityGroup "grp.admins.temp" -MemberUser "TestUser1" -Hours "8"
+Add-UserTempGroupMembership -IdentityGroup "grp.admins.temp" -MemberUser "TestUser1" -Hours "8"

@@ -32,7 +32,7 @@ Check how much time a user will be a group member
 Get-ADGroup "grp.admins.temp" -Property member –ShowMemberTimeToLive
 ```
 
-### Function Add-TempUserGroupMembership
+### Function Add-UserTempGroupMembership
 
 - *IdentityGroup*: AD group name for privileged membership 
 - *MemberUser*: AD user to add to the privileged group
