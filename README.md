@@ -93,5 +93,5 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 - *Add-UserTempGroupMembership*: This feature is called Temporary Group Membership (Time Based). This feature can be used when you need to temporarily grant a user some authority based on AD security group membership. After the specified time has elapsed, the user will be automatically removed from the security group (without administrator intervention).
 
 #### `30.Get-All-DCs-FSMO-Roles-Domain`
-- Get FSMO roles the Domain Controllers (Active Directory Flexible Single Master Operation).
+- Get FSMO roles from the Active Directory domain (Flexible Single Master Operation).
 - Get all Domain Controllers the domain.
