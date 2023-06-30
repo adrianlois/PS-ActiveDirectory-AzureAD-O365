@@ -95,3 +95,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### `30.Get-All-DCs-FSMO-Roles-Domain`
 - Get FSMO roles from the Active Directory domain (Flexible Single Master Operation).
 - Get all Domain Controllers the domain.
+
+#### `31.TS-Loss-TrustRelationship-Reset-DomainComputer`
+- Troubleshooting - Trust relationship between this workstation and the primary domain failed.
