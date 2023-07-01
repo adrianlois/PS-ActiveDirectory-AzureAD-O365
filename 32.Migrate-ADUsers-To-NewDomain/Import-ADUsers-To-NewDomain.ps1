@@ -13,3 +13,4 @@ ForEach ($User in $NewUsersList) {
         -CannotChangePassword $False -DisplayName $DisplayName -GivenName $Firstname `
         -Name $DisplayName -SamAccountName $SamAccountName -Surname $Surname `
         -Email $UserEmail -UserPrincipalName $UserPrincipalName -Enabled $True
+}

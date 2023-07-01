@@ -26,6 +26,5 @@ $AllADUsers | Sort-Object Name | Select-Object `
     @{Label = "SamAccountName"; Expression = { $_.SamAccountName } },
     @{Label = "UserPrincipalName"; Expression = { $_.UserPrincipalName } },
     @{Label = "Email"; Expression = { $_.Mail } } | `
-
 # Export report to CSV file
 Export-Csv -Path $CsvFile -Encoding UTF8 -NoTypeInformation -Delimiter ";"
