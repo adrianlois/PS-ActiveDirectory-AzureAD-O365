@@ -5,13 +5,13 @@
 Get objects users and computers inactive in Active Directory with PowerShell script and export to a csv file.
 
 #### Functions
-*Get-InactiveADComputers*: Get inactive computers from Active Directory by set the last number days. In a commented manner reference is also made to another path using the *Search-ADAccount* cmdlet to reach the same result)
+**Get-InactiveADComputers**: Get inactive computers from Active Directory by set the last number days. In a commented manner reference is also made to another path using the *Search-ADAccount* cmdlet to reach the same result)
 
 Inactive computers last 90 days
 ```ps
 Get-InactiveADComputers -DaysInactive 90 -ExportPah "C:\path\report-computers.csv"
 ```
-*Get-InactiveADUsers*: Get inactive accounts users from Active Directory by set the last number days.
+**Get-InactiveADUsers**: Get inactive accounts users from Active Directory by set the last number days.
 
 Inactive computers last 60 days
 ```ps
