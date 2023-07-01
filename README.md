@@ -98,3 +98,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### `31.TS-Loss-TrustRelationship-Reset-DomainComputer`
 - Troubleshooting - Trust relationship between this workstation and the primary domain failed.
+
+#### `32.Migrate-ADUsers-To-NewDomain`
+- Migrate a list of users from an old domain to a new domain Active Directory.
