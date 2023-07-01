@@ -6,13 +6,14 @@ $DNs = @(
     "OU=Finance,DC=domain,DC=local"
 )
 
+$CsvFile = "C:\ExportAD\Users_List.csv"
+
 # Create empty array
 $AllADUsers = @()
 
 # Loop through every DN
 foreach ($DN in $DNs) {
-    $Users = Get-ADUser -SearchBase $DN -Filter * -Properties * 
-
+    $Users = Get-ADUser -SearchBase $DN -Filter * -Properties *
     # Add users to array
     $AllADUsers += $Users
 }
@@ -27,4 +28,4 @@ $AllADUsers | Sort-Object Name | Select-Object `
     @{Label = "Email"; Expression = { $_.Mail } } | `
 
 # Export report to CSV file
-Export-Csv -Encoding UTF8 -Path $Csvfile -NoTypeInformation -Delimiter ";"
+Export-Csv -Path $CsvFile -Encoding UTF8 -NoTypeInformation -Delimiter ";"

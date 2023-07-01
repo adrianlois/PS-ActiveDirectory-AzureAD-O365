@@ -12,5 +12,4 @@ ForEach ($User in $NewUsersList) {
         -AccountPassword (ConvertTo-SecureString UserPasswordTemp -AsPlainText -Force) `
         -CannotChangePassword $False -DisplayName $DisplayName -GivenName $Firstname `
         -Name $DisplayName -SamAccountName $SamAccountName -Surname $Surname `
-        -Email $UserEmail -UserPrincipalName $UserPrincipalName -Enabled $true
-}
+        -Email $UserEmail -UserPrincipalName $UserPrincipalName -Enabled $True
