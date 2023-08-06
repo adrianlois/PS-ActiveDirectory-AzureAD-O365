@@ -96,9 +96,24 @@ Connect-ExchangeOnline -UserPrincipalName username@domain.onmicrosoft.com -Inlin
 Get-Mailbox -RecipientTypeDetails SharedMailbox -ResultSize Unlimited | Select-Object PrimarySmtpAddress,DisplayName | Export-Csv SharedFolders.csv  -NoTypeInformation SharedMailboxUsers.csv  -NoTypeInformation 
 ```
 
+### List all SMTP email addresses (primary and secondary)
+SMTP secundary is written in lowercase letters because it’s not the primary SMTP. The Primary SMTP is written in uppercase letters.
+```ps
+Get-Mailbox -ResultSize Unlimited | Select-Object DisplayName,PrimarySmtpAddress, @{Name="EmailAddresses";Expression={($_.EmailAddresses | Where-Object {$_ -clike "smtp*"} | ForEach-Object {$_ -replace "smtp:",""}) -join ","}} | Sort-Object DisplayName
+```
+
 ### Get a list of shared mailboxes members and permissions
 ```ps
-Get-Mailbox -RecipientTypeDetails SharedMailbox -ResultSize:Unlimited | Get-MailboxPermission | Select-Object Identity,User,AccessRights | Where-Object {($_.user -like '*@*')} | Export-Csv SharedMailbox.csv -NoTypeInformation 
+Get-Mailbox -RecipientTypeDetails SharedMailbox -ResultSize Unlimited | Get-MailboxPermission | Select-Object Identity,User,AccessRights,UserPrincipalName,LitigationHold,IsLicensed,AuditEnabled,HideFromAddressList | Where-Object {($_.user -like '*@*')} | Export-Csv SharedMailbox.csv -NoTypeInformation 
+```
+- **AccessRights**: permissions that the security principal has on the mailbox.
+- **LitigationHold**: verify a mailbox on Litigation Hold.
+- **AuditEnabled**: verify mailbox auditing is enabled.
+- **HideFromAddressList**: control visibility in address lists.
+
+### Disconnect Exchange Online session
+```ps
+Disconnect-ExchangeOnline -Confirm:$False -InformationAction Ignore -ErrorAction SilentlyContinue
 ```
 
 ### ExchangePowerShell Category
