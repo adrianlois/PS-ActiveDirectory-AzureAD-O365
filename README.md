@@ -101,3 +101,6 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 
 #### `32.Migrate-ADUsers-To-NewDomain`
 - Migrate a list of users from an old domain to a new domain Active Directory.
+
+#### `33.Gathering-Info-MSOnline-ExchangeOnline`
+- Collection of use cases, mainly for gathering information using the *MSOnline* modules of Office 365 and *ExchangeOnlineManagement* of Exchange Online.
