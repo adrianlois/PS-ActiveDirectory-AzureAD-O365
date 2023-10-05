@@ -23,17 +23,17 @@
     ForEach-Object {
         Move-Item -Path $Files -Destination $DestinationFiles -Force
     }
-    
+
     $DeleteAll = Read-Host "[?] Delete all subdirectories of"`"$SrcPathFiles"`"? (y/n)"
     
     if ( $DeleteAll -eq "y") {
-    	$Exclude = Read-Host "[?] Exclude a file or directory? (indicate string/n)"
+        $Exclude = Read-Host "[?] Exclude a file or directory? (indicate string/n)"
 	
 	if ( $Exclude -ne "n" ) {
 		Get-ChildItem -Path "$SrcPathFiles" -Exclude "$Exclude" | Remove-Item -Recurse -Force
-		Break
-	}
-	Remove-Item -Path "$SrcPathFiles\*" -Recurse -Force
+        Break
+    }
+    Remove-Item -Path "$SrcPathFiles\*" -Recurse -Force
     }
     Get-ChildItem -Path "$DestinationFiles"
 }

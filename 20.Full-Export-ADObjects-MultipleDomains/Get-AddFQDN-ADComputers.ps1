@@ -3,7 +3,10 @@
     Use this script as an example to replace a column and its values in all objects, finally export everything to a single csv file.
     For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName 
     to create it completely (FQDN) and then create a new csv file and replace the DNSHostName attribute with the concatenated FQDN field for all computers objects.
+
+    Set-FQDNToCsv: Use this function as an example to add a new column to an existing csv file.
 #>
+
 # Import-Module ActiveDirectory
 
 Function Get-AddFQDN-ADComputers {
@@ -86,4 +89,33 @@ Function Get-AddFQDN-ADComputers {
 	Remove-Item -Path "$CsvADComputers" -Force
 }
 
+# Use this function as an example to add a new column to an existing csv file.
+
+Function Set-FQDNToCsv {
+
+    param (
+        [Parameter(Mandatory=$True)]
+        [string]$ADObjectsPath,
+        [Parameter(Mandatory=$True)]
+        [string]$ADObjectsCsv
+    )
+
+    $ADObjectsPathCsv = $ADObjectsPath + $ADObjectsCsv
+    $ADObjectsTemp = $ADObjectsPath + "temp_" + $ADObjectsCsv
+
+    if (Test-Path $ADObjectsTemp -PathType leaf)	{
+	    Remove-Item -Path $ADObjectsTemp -Force
+    }
+
+    Rename-Item -Path $ADObjectsPathCsv -NewName $ADObjectsTemp
+
+	# Add new FQDN field (hostname+domain) to ADObjects csv file
+    Import-Csv -Path $ADObjectsTemp | `
+    Select-Object *, @{Name='FQDN';Expression={($_.Hostname + "." + $_.Domain + "." + "domain.local").ToLower()}} | `
+    Export-Csv "$ADObjectsPathCsv" -NoTypeInformation -Encoding UTF8
+
+    Remove-Item -Path $ADObjectsTemp -Force
+}
+
+Set-FQDNToCsv -ADObjectsPath "\\shared\export\" -ADObjectsCsv "AD_Objects.csv"
 Get-AddFQDN-ADComputers -CsvLocalPath "C:\AD\export" -CsvDestinationPath "\\shared\export"

@@ -46,7 +46,7 @@ References explained:
 
 ## FullExport-ADObjects_Output-Excel.ps1
 
-This script is the same as the main FullExport-ADObjects.ps1 script. With the difference that it adds three new optional functions designed for corporate environments and a more presentable and customized final presentation using the MS Excel module.
+This script is the same as the main FullExport-ADObjects.ps1 script. With the difference that it adds three new optional functions designed for corporate environments and a more visual and customized in format .XLSX final presentation using the MS Excel module.
 
 ```ps
 Install-Module -Name ImportExcel
@@ -59,12 +59,10 @@ Import-Module -Name ImportExcel
    
 3. `Move-ExcelFile`: Move the final Excel file to a remote share.
 
-## Set-FQDNToCsv.ps1
-
-Use this script as an example to add a new column to an existing csv file.
-
 ## Get-AddFQDN-ADComputers.ps1
 
 Export all Active Directory equipment type objects. Use this script as an example to replace a column and its values in all objects, finally export everything to a single csv file.
 
 For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName to create it completely (FQDN) and then create a new csv file and replace the DNSHostName attribute with the concatenated FQDN field for all computers objects.
+
+- `Set-FQDNToCsv.ps1`: Use this function as an example to add a new column to an existing csv file.

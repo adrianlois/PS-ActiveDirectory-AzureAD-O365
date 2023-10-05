@@ -59,12 +59,13 @@ Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange O
 #### `19.ReverseSID-ADUser`
 - Get AD SamAccountName given your SID.
 
-#### `20.Move-ItemExtension-RecursivePath`
-- Recursively move files of a given extension from subdirectories to a target root directory.
-
-#### `21.Full-Export-ADObjects-MultipleDomains`
+#### `20.Full-Export-ADObjects-MultipleDomains`
 - *FullExport-ADObjects.ps1*: Get all objects from all available Active Directory domains and export them in a CSV format (users, groups and computers).
-- *Get-AddFQDN-ADComputers.ps1, Set-FQDNToCsv.ps1*: Concatenate attributes Name, Domain and DistinguishedName to establish a FQDN (DNSHostName) for computers objects (non-Windows), add a new column to an existing CSV file and then export it all in a single CSV file.
+- *FullExport-ADObjects_Output-Excel*: This script is the same as the main FullExport-ADObjects.ps1 script. With the difference that it adds three new optional functions designed for corporate environments and a more visual and customized in format .XLSX final presentation using the MS Excel module.
+- *Get-AddFQDN-ADComputers.ps1*: Concatenate attributes Name, Domain and DistinguishedName to establish a FQDN (DNSHostName) for computers objects (non-Windows), add a new column to an existing CSV file and then export it all in a single CSV file.
+
+#### `21.Move-ItemExtension-RecursivePath`
+- Recursively move files of a given extension from subdirectories to a target root directory.
 
 #### `22.WindowsDefender-Status`
 - Check the status of the Windows Defender service and components and disable it for security testing to prevent threat detection.
