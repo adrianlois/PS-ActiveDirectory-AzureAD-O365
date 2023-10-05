@@ -1,6 +1,6 @@
 Function ImportModules {
 	Import-Module -Name ActiveDirectory
-    Import-Module -Name ImportExcel
+	Import-Module -Name ImportExcel
 }
 
 Function OutputBanner {
@@ -140,11 +140,11 @@ $Csv = @"
 
 Function Get-Inactivity-ADUsersLastLogon {
 
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory)]
-        [string]$CsvPath
-    )
+	[CmdletBinding()]
+	param (
+		[Parameter(Mandatory)]
+		[string]$CsvPath
+	)
 
 	$Csv | ForEach-Object {
 		$Name = $_."Name"
@@ -168,33 +168,33 @@ Function Get-Inactivity-ADUsersLastLogon {
 }
 
 Function CsvToExcel {
-    param (
-        [Parameter(Mandatory=$True)]
-        [string]$CsvPath
-    )
+	param (
+		[Parameter(Mandatory=$True)]
+		[string]$CsvPath
+	)
 
-    $Date = Get-Date -UFormat "%m-%Y"
-    $XlsxFile = "Export_AD_" + $Date + ".xlsx"
+	$Date = Get-Date -UFormat "%m-%Y"
+	$XlsxFile = "Export_AD_" + $Date + ".xlsx"
 	$CsvFiles = (Get-ChildItem -Path $CsvPath -Filter "*.csv").Name
 
-    ForEach ($CsvFile in $CsvFiles) {
+	ForEach ($CsvFile in $CsvFiles) {
 	
 		$WorkSheetname = $CsvFile.Substring(0,$CsvFile.Length -4)
 
 		Import-Csv -Path "$CsvPath\$CsvFile" | Export-Excel -Path "$CsvPath\$XlsxFile" -WorkSheetname $WorkSheetname `
-        -NoNumberConversion IPv4Address	-AutoSize -BoldTopRow -AutoFilter -FreezeTopRow -ConditionalText $(
-            New-ConditionalText True -BackgroundColor LightGreen -ConditionalTextColor DarkGreen
-            New-ConditionalText False -BackgroundColor Yellow -ConditionalTextColor Red
-        )
-    }
+		-NoNumberConversion IPv4Address	-AutoSize -BoldTopRow -AutoFilter -FreezeTopRow -ConditionalText $(
+			New-ConditionalText True -BackgroundColor LightGreen -ConditionalTextColor DarkGreen
+			New-ConditionalText False -BackgroundColor Yellow -ConditionalTextColor Red
+		)
+	}
 }
 
 Function Move-ExcelFile {
 	param (
-        [Parameter(Mandatory)]
-        [string]$Path,
 		[Parameter(Mandatory)]
-        [string]$Destination
+		[string]$Path,
+		[Parameter(Mandatory)]
+		[string]$Destination
 	)
 	
 	$Date = Get-Date -UFormat "%m-%Y"
