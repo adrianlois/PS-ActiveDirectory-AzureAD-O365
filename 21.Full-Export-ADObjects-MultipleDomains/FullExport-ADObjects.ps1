@@ -11,7 +11,7 @@ ADUsers, ADGroups, ADComputers: Boolean parameters, specify what you want to exp
    C:\PS> FullExport-ADObjects -ADComputers -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 #>
 
-# Import-Module ActiveDirectory
+# Import-Module -Name ActiveDirectory
 
 Function FullExport-ADObjects {
 

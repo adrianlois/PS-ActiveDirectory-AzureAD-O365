@@ -44,10 +44,24 @@ References explained:
 - Paging Search Results: https://docs.microsoft.com/es-es/previous-versions/windows/desktop/ldap/paging-search-results?redirectedfrom=MSDN
 
 
+## FullExport-ADObjects_Output-Excel.ps1
+
+This script is the same as the main FullExport-ADObjects.ps1 script. With the difference that it adds three new optional functions designed for corporate environments and a more presentable and customized final presentation using the MS Excel module.
+
+```ps
+Install-Module -Name ImportExcel
+Import-Module -Name ImportExcel
+```
+
+1. `Get-Inactivity-ADUsersLastLogon`: Get all domain users who have not logged on in the last 90 days to detect possible inactivity or obsolete accounts. This result is exported in a temporary CSV file which is then added as a new sheet in the Excel file.
+
+2. `CsvToExcel`: This is the main function. It performs the import and adaptation of all the results of the previous temporary files in CSV format to an MS Excel XLSX format. Adds a new sheet for each CSV file and also colors in yellow and green the cells corresponding to the "Enabled=True or False" attributes to visually highlight enabled or disabled AD users.
+   
+3. `Move-ExcelFile`: Move the final Excel file to a remote share.
+
 ## Set-FQDNToCsv.ps1
 
 Use this script as an example to add a new column to an existing csv file.
-
 
 ## Get-AddFQDN-ADComputers.ps1
 
