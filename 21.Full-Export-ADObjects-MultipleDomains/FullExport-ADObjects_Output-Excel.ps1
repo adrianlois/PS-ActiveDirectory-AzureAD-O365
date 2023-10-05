@@ -178,10 +178,10 @@ Function CsvToExcel {
 	$CsvFiles = (Get-ChildItem -Path $CsvPath -Filter "*.csv").Name
 
     ForEach ($CsvFile in $CsvFiles) {
-
+	
 		$WorkSheetname = $CsvFile.Substring(0,$CsvFile.Length -4)
 
-        Import-Csv -Path "$CsvPath\$CsvFile" | Export-Excel -Path "$CsvPath\$XlsxFile" -WorkSheetname $WorkSheetname `
+		Import-Csv -Path "$CsvPath\$CsvFile" | Export-Excel -Path "$CsvPath\$XlsxFile" -WorkSheetname $WorkSheetname `
         -NoNumberConversion IPv4Address	-AutoSize -BoldTopRow -AutoFilter -FreezeTopRow -ConditionalText $(
             New-ConditionalText True -BackgroundColor LightGreen -ConditionalTextColor DarkGreen
             New-ConditionalText False -BackgroundColor Yellow -ConditionalTextColor Red
