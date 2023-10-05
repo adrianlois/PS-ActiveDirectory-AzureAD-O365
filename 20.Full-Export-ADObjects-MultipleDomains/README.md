@@ -65,4 +65,4 @@ Export all Active Directory equipment type objects. Use this script as an exampl
 
 For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName to create it completely (FQDN) and then create a new csv file and replace the DNSHostName attribute with the concatenated FQDN field for all computers objects.
 
-- `Set-FQDNToCsv.ps1`: Use this function as an example to add a new column to an existing csv file.
+- `Set-FQDNToCsv`: Use this function as an example to add a new column to an existing csv file.
