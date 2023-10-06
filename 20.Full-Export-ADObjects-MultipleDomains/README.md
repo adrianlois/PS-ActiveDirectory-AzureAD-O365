@@ -61,8 +61,8 @@ Import-Module -Name ImportExcel
 
 ## Get-AddFQDN-ADComputers.ps1
 
-Export all Active Directory equipment type objects. Use this script as an example to replace a column and its values in all objects, finally export everything to a single csv file.
+Export all Active Directory equipment type objects. Use this script to replace a column and its values in all objects, finally export everything to a single csv file.
 
 For NON WINDOWS computers that do not have value set in the attribute "DNSHostName" we concatenate the fields Name, Domain and DistinguishedName to create it completely (FQDN) and then create a new csv file and replace the DNSHostName attribute with the concatenated FQDN field for all computers objects.
 
-- `Set-FQDNToCsv`: Use this function as an example to add a new column to an existing csv file.
+- `Set-FQDNToCsv`: Use this function to add a new column to an existing csv file.
