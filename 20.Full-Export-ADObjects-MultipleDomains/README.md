@@ -43,7 +43,6 @@ References explained:
 - https://social.technet.microsoft.com/wiki/contents/articles/32418.active-directory-troubleshooting-server-has-returned-the-following-error-invalid-enumeration-context.aspx
 - Paging Search Results: https://docs.microsoft.com/es-es/previous-versions/windows/desktop/ldap/paging-search-results?redirectedfrom=MSDN
 
-
 ## FullExport-ADObjects_Output-Excel.ps1
 
 This script is the same as the main FullExport-ADObjects.ps1 script. With the difference that it adds three new optional functions designed for corporate environments and a more visual and customized in format .XLSX final presentation using the MS Excel module.
