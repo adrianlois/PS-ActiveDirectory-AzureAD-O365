@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="PS-ActiveDirectory-AzureAD-O365-EXO-logo.png" alt="PS-ActiveDirectory-AzureAD-O365-EXO-logo" width="540">
+  <img src="PS-ActiveDirectory-AzureAD-O365-EXO-logo.png" alt="PS-ActiveDirectory-AzureAD-O365-EXO-logo" width="550">
   <br>
   PowerShell Scripts: Active Directory, Azure AD, Office 365 & Exchange Online
 </h1>
