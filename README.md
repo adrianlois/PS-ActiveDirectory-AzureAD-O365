@@ -1,5 +1,46 @@
-# PS-ActiveDirectory-AzureAD-O365
-Management with PowerShell scripts: Active Directory, Azure AD, O365, Exchange Online.
+<h1 align="center">
+  <img src="PS-ActiveDirectory-AzureAD-O365-logo.png" alt="PS-ActiveDirectory-AzureAD-O365-logo" width="500">
+  <br>
+  PowerShell Scripts: Active Directory, Azure AD, Office 365 & Exchange Online
+</h1>
+
+<h1>Índice</h1>
+
+- [`01.Assign-Licenses-To-UserAccounts-O365`](#01assign-licenses-to-useraccounts-o365)
+- [`02.Manage-Permissions-RecipientsMailbox-EXO`](#02manage-permissions-recipientsmailbox-exo)
+- [`03.Create-ADUsers`](#03create-adusers)
+- [`04.Create-ADGroups`](#04create-adgroups)
+- [`05.Get-Inactive-ADCompUsers-LastLogon`](#05get-inactive-adcompusers-lastlogon)
+- [`06.Get-Move-ADComputers`](#06get-move-adcomputers)
+- [`07.Get-DNS-Records-Duplicate-IPs`](#07get-dns-records-duplicate-ips)
+- [`08.Create-Recursive-Directories`](#08create-recursive-directories)
+- [`09.Get-ADUsers-LastLogon`](#09get-adusers-lastlogon)
+- [`10.Change-Attributes-ADUsers`](#10change-attributes-adusers)
+- [`11.Manage-LocalUsers-Accounts`](#11manage-localusers-accounts)
+- [`12.Migrate-UserProfile`](#12migrate-userprofile)
+- [`13.Encode-Password-Batchfile`](#13encode-password-batchfile)
+- [`14.Get-ADGroups-Inherited`](#14get-adgroups-inherited)
+- [`15.Get-Services-RemoteHost`](#15get-services-remotehost)
+- [`16.Manage-ADResourcesShared`](#16manage-adresourcesshared)
+- [`17.Join-ComputerToDomain`](#17join-computertodomain)
+- [`18.CopyUsers-ADGroup-SourceToDestination`](#18copyusers-adgroup-sourcetodestination)
+- [`19.ReverseSID-ADUser`](#19reversesid-aduser)
+- [`20.Full-Export-ADObjects-MultipleDomains`](#20full-export-adobjects-multipledomains)
+- [`21.Move-ItemExtension-RecursivePath`](#21move-itemextension-recursivepath)
+- [`22.WindowsDefender-Status`](#22windowsdefender-status)
+- [`23.AdminLocal-Config`](#23adminlocal-config)
+- [`24.Remote-Code-Execution`](#24remote-code-execution)
+- [`25.Get-Properties-By-Email`](#25get-properties-by-email)
+- [`26.Get-ADUsers-LastWhenCreated`](#26get-adusers-lastwhencreated)
+- [`27.Get-MicrosoftUpdatesInstalled`](#27get-microsoftupdatesinstalled)
+- [`28.Get-IP-HostName-AD-DNS`](#28get-ip-hostname-ad-dns)
+- [`29.Add-UserTemporary-GroupMembership`](#29add-usertemporary-groupmembership)
+- [`30.Get-All-DCs-FSMO-Roles-Domain`](#30get-all-dcs-fsmo-roles-domain)
+- [`31.TS-Loss-TrustRelationship-Reset-DomainComputer`](#31ts-loss-trustrelationship-reset-domaincomputer)
+- [`32.Migrate-ADUsers-To-NewDomain`](#32migrate-adusers-to-newdomain)
+- [`33.Gathering-Info-MSOnline-ExchangeOnline`](#33gathering-info-msonline-exchangeonline)
+
+---
 
 #### `01.Assign-Licenses-To-UserAccounts-O365`
 - Get or Assign licenses to user accounts with Office 365 PowerShell script from csv file to import.
