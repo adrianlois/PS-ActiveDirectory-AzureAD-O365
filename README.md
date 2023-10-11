@@ -1,7 +1,7 @@
+<h1 align="center">PowerShell Scripts: Active Directory, Azure AD, Office 365 & Exchange Online</h1>
+
 <h1 align="center">
   <img src="PS-ActiveDirectory-AzureAD-O365-EXO-logo.png" alt="PS-ActiveDirectory-AzureAD-O365-EXO-logo" width="560">
-  <br>
-  PowerShell Scripts: Active Directory, Azure AD, Office 365 & Exchange Online
 </h1>
 
 <h1>Table of contents</h1>
