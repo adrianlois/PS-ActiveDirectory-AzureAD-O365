@@ -4,7 +4,7 @@
   PowerShell Scripts: Active Directory, Azure AD, Office 365 & Exchange Online
 </h1>
 
-<h1>Índice</h1>
+<h1>Table of contents</h1>
 
 - [`01.Assign-Licenses-To-UserAccounts-O365`](#01assign-licenses-to-useraccounts-o365)
 - [`02.Manage-Permissions-RecipientsMailbox-EXO`](#02manage-permissions-recipientsmailbox-exo)
