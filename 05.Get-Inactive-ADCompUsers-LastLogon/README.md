@@ -25,10 +25,10 @@ Get the last login of Active Directory users (set the $DaysInactive variable). S
 Get-Inactivity-ADUsersLastLogon -DaysInactive 90 -ExportPath "%USERPROFILE%\Desktop\ADUsersLastLogon.csv"
 ```
 
-### Definition of timestamps attributes
+## Definition of timestamps attributes
 
 - **LastLogon**: When a user logs in, this attribute is updated only in the DC that has provided the authentication, it is not replicated. This attribute is useful to know in which services the user has or has not logged in.
 
-- **LastLogonTimeStamp**: This attribute is similar to "LastLogon" one except that this data is replicated. Although to avoid an excessive number of calls between DCs each time a user logs in, the need or not for this synchronization is calculated by means of a third attribute, ms-DS-Logon-Time-Sync-Interval (which by default is 14 days) and a number of additional calculations. This value can also be used to identify inactive accounts, although its format (NT Time) makes it not very convenient to use.
+- **LastLogonTimeStamp**: This attribute is similar to "LastLogon" one except that this data is replicated on all domain controllers in a domain. Although to avoid an excessive number of calls between DCs each time a user logs in, the need or not for this synchronization is calculated by means of a third attribute, [ms-DS-Logon-Time-Sync-Interval](https://learn.microsoft.com/en-us/windows/win32/adschema/a-msds-logontimesyncinterval) (which by default is 14 days) and a number of additional calculations. This value can also be used to identify inactive accounts, although its format (NT Time) makes it not very convenient to use.
 
 - **LastLogonDate**: Finally we have "LastLogonDate", this will be the most useful attribute since although it is not a replicated value if it calculates the value from LastLogonTimeStamp which yes it is replicated.
