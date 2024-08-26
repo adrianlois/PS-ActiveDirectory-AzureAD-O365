@@ -39,6 +39,7 @@
 - [`31.TS-Loss-TrustRelationship-Reset-DomainComputer`](#31ts-loss-trustrelationship-reset-domaincomputer)
 - [`32.Migrate-ADUsers-To-NewDomain`](#32migrate-adusers-to-newdomain)
 - [`33.Gathering-Info-MSOnline-ExchangeOnline`](#33gathering-info-msonline-exchangeonline)
+- [`34.Get-ADComputersInactive`](#34get-adcomputersinactive)
 
 ---
 
@@ -146,3 +147,6 @@
 
 #### `33.Gathering-Info-MSOnline-ExchangeOnline`
 - Collection of use cases, mainly for gathering information using the *MSOnline* modules of Office 365 and *ExchangeOnlineManagement* of Exchange Online.
+
+#### `34.Get-ADComputersInactive`
+- A quick and easy way to detect inactive Active Directory computers based mainly on two properties: *lastlogondate, PasswordLastSet*.
