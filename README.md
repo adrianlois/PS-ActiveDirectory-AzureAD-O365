@@ -149,4 +149,4 @@
 - Collection of use cases, mainly for gathering information using the *MSOnline* modules of Office 365 and *ExchangeOnlineManagement* of Exchange Online.
 
 #### `34.Get-ADComputersInactive`
-- A quick and easy way to detect inactive Active Directory computers based mainly on two properties: *lastlogondate, PasswordLastSet*.
+- A fast and easy way to detect inactive Active Directory computers based mainly on two properties: *lastlogondate, PasswordLastSet*.
