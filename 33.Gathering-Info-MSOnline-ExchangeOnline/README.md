@@ -1,9 +1,30 @@
+# Office 365: PowerShell Module MSOnline
+
 Collection of use cases, mainly for gathering information using the *MSOnline* modules of Office 365 and *ExchangeOnlineManagement* of Exchange Online.
 
 - [Office 365: PowerShell Module MSOnline](#office-365-powershell-module-msonline)
+    - [Install \& Import Module MSOnline](#install--import-module-msonline)
+    - [Initiate a connection MSOnline](#initiate-a-connection-msonline)
+    - [Initiate a connection by using a credential object MSOnline](#initiate-a-connection-by-using-a-credential-object-msonline)
+    - [Get licensed Office 365 users](#get-licensed-office-365-users)
+    - [List of users without a license](#list-of-users-without-a-license)
+    - [List of deleted accounts](#list-of-deleted-accounts)
+    - [List the time of the last password change for Office 365 users](#list-the-time-of-the-last-password-change-for-office-365-users)
+    - [List the active (enabled) accounts](#list-the-active-enabled-accounts)
+    - [List the disabled accounts](#list-the-disabled-accounts)
+    - [Get list Azure tenant users that have not been synced from on-premises Active Directory Domain Services (cloud users) via Azure Active Directory Sync (Azure AD Connect)](#get-list-azure-tenant-users-that-have-not-been-synced-from-on-premises-active-directory-domain-services-cloud-users-via-azure-active-directory-sync-azure-ad-connect)
+    - [Check if the user is cloud-native or synced from on-prem AD](#check-if-the-user-is-cloud-native-or-synced-from-on-prem-ad)
+    - [Get list of users who haven’t changed their passwords for more than 90 days](#get-list-of-users-who-havent-changed-their-passwords-for-more-than-90-days)
 - [Exchange Online: PowerShell Module ExchangeOnlineManagement](#exchange-online-powershell-module-exchangeonlinemanagement)
+    - [Install \& Import Module ExchangeOnlineManagement](#install--import-module-exchangeonlinemanagement)
+    - [Initiate a connection ExchangeOnlineManagement](#initiate-a-connection-exchangeonlinemanagement)
+    - [Initiate a connection ExchangeOnlineManagement (PowerShell 7 exclusive connection method)](#initiate-a-connection-exchangeonlinemanagement-powershell-7-exclusive-connection-method)
+    - [Get a summary list of all the mailboxes in your organization](#get-a-summary-list-of-all-the-mailboxes-in-your-organization)
+    - [List all SMTP email addresses (primary and secondary)](#list-all-smtp-email-addresses-primary-and-secondary)
+    - [Get a list of shared mailboxes members and permissions](#get-a-list-of-shared-mailboxes-members-and-permissions)
+    - [Disconnect Exchange Online session](#disconnect-exchange-online-session)
+    - [ExchangePowerShell Category](#exchangepowershell-category)
 
-# Office 365: PowerShell Module MSOnline
 ### Install & Import Module MSOnline
 ```ps
 Install-Module MSOnline
