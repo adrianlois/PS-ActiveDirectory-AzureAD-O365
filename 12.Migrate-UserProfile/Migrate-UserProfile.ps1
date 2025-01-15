@@ -11,7 +11,7 @@ function Migrate-UserProfile {
     Indicate the profile folder of the user account to copy.
 
     .EXAMPLE
-    C:\PS> Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
+    C:\PS> Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "USER"
 #>
 
     param (

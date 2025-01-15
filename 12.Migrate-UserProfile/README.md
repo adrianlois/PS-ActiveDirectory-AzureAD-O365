@@ -5,7 +5,7 @@
 
 Load function **Migrate-UserProfile.ps1**. Usage example:
 ```
-Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "adrian"
+Migrate-UserProfile -PCSrc "PC1" -PCDst "PC2" -User "USER"
 ```
 
 Load functions **.\Migrate-UserProfile-Form.ps1** and execute function:

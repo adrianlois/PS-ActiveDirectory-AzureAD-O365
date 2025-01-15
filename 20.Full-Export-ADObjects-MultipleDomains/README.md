@@ -14,11 +14,11 @@ In case you do not have multiple domains and have a single domain simply delete 
 
 Example 1: Export Active Directory objects users and groups 
 ```powershell
-FullExport-ADObjects -ADUsers -ADGroups -CsvPath "C:\Users\adrian\Desktop\ExportAD"
+FullExport-ADObjects -ADUsers -ADGroups -CsvPath "C:\Users\USER\Desktop\ExportAD"
 ```
 Example 2: Export Active Directory all objects (users, groups and computers) and the files are exported locally and then moved to another path
 ```powershell
-FullExport-ADObjects -ADAll -CsvPath "C:\Users\adrian\Desktop\ExportAD" -DestinationPath "\\server\shared\"
+FullExport-ADObjects -ADAll -CsvPath "C:\Users\USER\Desktop\ExportAD" -DestinationPath "\\server\shared\"
 ```
 
 - *Member, MemberOf*: Expand all members and members of users or groups separated by semicolon ( ; ) and show only their name.
