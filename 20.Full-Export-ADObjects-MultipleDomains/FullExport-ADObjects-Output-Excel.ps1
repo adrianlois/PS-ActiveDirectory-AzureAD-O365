@@ -173,7 +173,7 @@ Function CsvToExcel {
 		[string]$CsvPath
 	)
 
-	$Date = Get-Date -UFormat "%m-%Y"
+	$Date = Get-Date -Format "MM-yyyy"
 	$XlsxFile = "Export_AD_" + $Date + ".xlsx"
 	$CsvFiles = (Get-ChildItem -Path $CsvPath -Filter "*.csv").Name
 
@@ -197,7 +197,7 @@ Function Move-ExcelFile {
 		[string]$Destination
 	)
 	
-	$Date = Get-Date -UFormat "%m-%Y"
+	$Date = Get-Date -Format "MM-yyyy"
 	$XlsxFile = "Export_AD_" + $Date + ".xlsx"
 	Copy-Item -Path "$Path\$XlsxFile" -Destination "$Destination" -Force
 	#Remove-Item -Path "$Path\*" -Force
